@@ -15,6 +15,7 @@
 		AA0CFDD21BEACC6E008B03C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0CFDD01BEACC6E008B03C5 /* LaunchScreen.storyboard */; };
 		AA0CFDDD1BEACC6E008B03C5 /* NavyWarfareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDDC1BEACC6E008B03C5 /* NavyWarfareTests.swift */; };
 		AA0CFDE81BEACC6E008B03C5 /* NavyWarfareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDE71BEACC6E008B03C5 /* NavyWarfareUITests.swift */; };
+		FC66893C08F5D96B60E333A2 /* Pods_NavyWarfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F2630BE54CD79E77C0CDA6F /* Pods-NavyWarfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare.release.xcconfig"; sourceTree = "<group>"; };
 		AA0CFDC21BEACC6E008B03C5 /* NavyWarfare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavyWarfare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0CFDC51BEACC6E008B03C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA0CFDC71BEACC6E008B03C5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		AA0CFDE31BEACC6E008B03C5 /* NavyWarfareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavyWarfareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0CFDE71BEACC6E008B03C5 /* NavyWarfareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavyWarfareUITests.swift; sourceTree = "<group>"; };
 		AA0CFDE91BEACC6E008B03C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NavyWarfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9355AC3B8A34F5A0D4FC704 /* Pods-NavyWarfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC66893C08F5D96B60E333A2 /* Pods_NavyWarfare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,8 @@
 				AA0CFDDB1BEACC6E008B03C5 /* NavyWarfareTests */,
 				AA0CFDE61BEACC6E008B03C5 /* NavyWarfareUITests */,
 				AA0CFDC31BEACC6E008B03C5 /* Products */,
+				C87BBE2FA67A69B47EDAA4E5 /* Pods */,
+				D0385BF03A9CD874873B77D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +135,23 @@
 			path = NavyWarfareUITests;
 			sourceTree = "<group>";
 		};
+		C87BBE2FA67A69B47EDAA4E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9355AC3B8A34F5A0D4FC704 /* Pods-NavyWarfare.debug.xcconfig */,
+				2F2630BE54CD79E77C0CDA6F /* Pods-NavyWarfare.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D0385BF03A9CD874873B77D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA0CFDEC1BEACC6E008B03C5 /* Build configuration list for PBXNativeTarget "NavyWarfare" */;
 			buildPhases = (
+				C68ECF547A9B386C87ADE6F4 /* Check Pods Manifest.lock */,
 				AA0CFDBE1BEACC6E008B03C5 /* Sources */,
 				AA0CFDBF1BEACC6E008B03C5 /* Frameworks */,
 				AA0CFDC01BEACC6E008B03C5 /* Resources */,
+				1C791F811A9E208F1B2AFD51 /* Embed Pods Frameworks */,
+				478C883DF69E31BCDE6C2A4C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,6 +284,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C791F811A9E208F1B2AFD51 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		478C883DF69E31BCDE6C2A4C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C68ECF547A9B386C87ADE6F4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA0CFDBE1BEACC6E008B03C5 /* Sources */ = {
@@ -402,6 +477,7 @@
 		};
 		AA0CFDED1BEACC6E008B03C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9355AC3B8A34F5A0D4FC704 /* Pods-NavyWarfare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NavyWarfare/Info.plist;
@@ -415,6 +491,7 @@
 		};
 		AA0CFDEE1BEACC6E008B03C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F2630BE54CD79E77C0CDA6F /* Pods-NavyWarfare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NavyWarfare/Info.plist;
