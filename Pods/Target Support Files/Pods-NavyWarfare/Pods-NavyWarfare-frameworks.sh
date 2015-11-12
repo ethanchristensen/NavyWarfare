@@ -85,9 +85,19 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-NavyWarfare/Bolts.framework"
+  install_framework "Pods-NavyWarfare/FBSDKCoreKit.framework"
+  install_framework "Pods-NavyWarfare/FBSDKLoginKit.framework"
+  install_framework "Pods-NavyWarfare/FBSDKShareKit.framework"
   install_framework "Pods-NavyWarfare/Parse.framework"
+  install_framework "Pods-NavyWarfare/ParseFacebookUtilsV4.framework"
+  install_framework "Pods-NavyWarfare/ParseUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-NavyWarfare/Bolts.framework"
+  install_framework "Pods-NavyWarfare/FBSDKCoreKit.framework"
+  install_framework "Pods-NavyWarfare/FBSDKLoginKit.framework"
+  install_framework "Pods-NavyWarfare/FBSDKShareKit.framework"
   install_framework "Pods-NavyWarfare/Parse.framework"
+  install_framework "Pods-NavyWarfare/ParseFacebookUtilsV4.framework"
+  install_framework "Pods-NavyWarfare/ParseUI.framework"
 fi

@@ -51,6 +51,7 @@
 		AA0CFDE31BEACC6E008B03C5 /* NavyWarfareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavyWarfareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0CFDE71BEACC6E008B03C5 /* NavyWarfareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavyWarfareUITests.swift; sourceTree = "<group>"; };
 		AA0CFDE91BEACC6E008B03C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA1D5E761BF5342A0051C8C2 /* NavyWarfare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NavyWarfare-Bridging-Header.h"; sourceTree = "<group>"; };
 		B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NavyWarfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9355AC3B8A34F5A0D4FC704 /* Pods-NavyWarfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +114,7 @@
 				AA0CFDCE1BEACC6E008B03C5 /* Assets.xcassets */,
 				AA0CFDD01BEACC6E008B03C5 /* LaunchScreen.storyboard */,
 				AA0CFDD31BEACC6E008B03C5 /* Info.plist */,
+				AA1D5E761BF5342A0051C8C2 /* NavyWarfare-Bridging-Header.h */,
 			);
 			path = NavyWarfare;
 			sourceTree = "<group>";
@@ -480,12 +482,15 @@
 			baseConfigurationReference = C9355AC3B8A34F5A0D4FC704 /* Pods-NavyWarfare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = NavyWarfare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = EthansStrangeDesign.NavyWarfare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NavyWarfare/NavyWarfare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -494,12 +499,14 @@
 			baseConfigurationReference = 2F2630BE54CD79E77C0CDA6F /* Pods-NavyWarfare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = NavyWarfare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = EthansStrangeDesign.NavyWarfare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NavyWarfare/NavyWarfare-Bridging-Header.h";
 			};
 			name = Release;
 		};

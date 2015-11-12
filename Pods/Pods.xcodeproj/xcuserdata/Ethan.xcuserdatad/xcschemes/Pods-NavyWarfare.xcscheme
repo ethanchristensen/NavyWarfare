@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '92BDF48A1C3A27FD222342A9'
+               BlueprintIdentifier = 'C6B6EAA546116708B46C30E2'
                BlueprintName = 'Pods-NavyWarfare'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_NavyWarfare.framework'>
