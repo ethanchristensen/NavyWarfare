@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="Ug1-Bd-zXx">
             <objects>
-                <viewController id="sX7-sg-2tg" sceneMemberID="viewController">
+                <viewController id="sX7-sg-2tg" customClass="HomeViewController" customModule="NavyWarfare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="19t-6S-a3o"/>
                         <viewControllerLayoutGuide type="bottom" id="F1q-hd-037"/>
@@ -56,17 +56,35 @@
                                     <segue destination="9ap-aZ-wtW" kind="show" id="mje-Ox-zna"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4P-5e-9ng">
+                                <rect key="frame" x="20" y="420" width="85" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Logout User"/>
+                                <connections>
+                                    <action selector="logOutButtonAction:" destination="sX7-sg-2tg" eventType="touchUpInside" id="Zhi-Lt-Cdz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo6-xK-7W1">
+                                <rect key="frame" x="106" y="72" width="365" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="SEs-p3-e0z"/>
+                    <connections>
+                        <outlet property="userName" destination="bo6-xK-7W1" id="ydA-wn-lzO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eu-tb-Zyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2164" y="-411"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Friends List-->
         <scene sceneID="SZk-DK-Nyf">
             <objects>
                 <tableViewController id="ozU-Pf-yr8" sceneMemberID="viewController">
@@ -110,7 +128,7 @@
                             <outlet property="delegate" destination="ozU-Pf-yr8" id="Wbu-Q6-2dR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="pw2-cU-PPj"/>
+                    <navigationItem key="navigationItem" title="Friends List" id="pw2-cU-PPj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82f-ax-aiv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yEm-MH-Vly">
