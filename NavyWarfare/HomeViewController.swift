@@ -10,19 +10,34 @@ import UIKit
 import Parse
 import ParseUI
 
-class HomeViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
-
+class HomeViewController: BackgroundViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
+    
     @IBOutlet weak var userName: UILabel!
     
     
     let loginViewController = PFLogInViewController()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //        let filePath = NSBundle.mainBundle().pathForResource("OceanBack", ofType: "gif")
+        //        let gif = NSData(contentsOfFile: filePath!)
+        //
+        //        let webViewBG = UIWebView(frame: self.view.frame)
+        //        webViewBG.loadData(gif!, MIMEType: "image/gif", textEncodingName: "utf-8", baseURL: NSURL())
+        //
+        //        webViewBG.userInteractionEnabled = false;
+        //        self.view.insertSubview(webViewBG,atIndex:0);
+        //
+        //        let filter = UIView()
+        //        filter.frame = self.view.frame
+        //        filter.backgroundColor = UIColor.blackColor()
+        //        filter.alpha = 0.05
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,7 +65,7 @@ class HomeViewController: UIViewController, PFLogInViewControllerDelegate, PFSig
     }
     
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
-        let alert = UIAlertController(title: "Login Error", message: "Please login to Twitter", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Login Error", message: "Login Error", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
         logInController.presentViewController(alert, animated: true, completion: nil)
     }
@@ -87,7 +102,7 @@ class HomeViewController: UIViewController, PFLogInViewControllerDelegate, PFSig
         PFUser.logOut()
         self.setup()
     }
-
     
-
+    
+    
 }
