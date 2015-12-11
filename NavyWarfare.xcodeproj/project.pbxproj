@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AA0CFDC61BEACC6E008B03C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDC51BEACC6E008B03C5 /* AppDelegate.swift */; };
-		AA0CFDC81BEACC6E008B03C5 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0CFDC71BEACC6E008B03C5 /* art.scnassets */; };
-		AA0CFDCA1BEACC6E008B03C5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDC91BEACC6E008B03C5 /* GameViewController.swift */; };
 		AA0CFDCF1BEACC6E008B03C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0CFDCE1BEACC6E008B03C5 /* Assets.xcassets */; };
 		AA0CFDDD1BEACC6E008B03C5 /* NavyWarfareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDDC1BEACC6E008B03C5 /* NavyWarfareTests.swift */; };
 		AA0CFDE81BEACC6E008B03C5 /* NavyWarfareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDE71BEACC6E008B03C5 /* NavyWarfareUITests.swift */; };
@@ -22,6 +20,13 @@
 		AA21717B1C0F9A00000FF830 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA21717A1C0F9A00000FF830 /* SettingsViewController.swift */; };
 		AA21717F1C0FBBCB000FF830 /* BackgroundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA21717E1C0FBBCB000FF830 /* BackgroundTableViewController.swift */; };
 		AA2171841C0FDBA3000FF830 /* GameSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2171831C0FDBA3000FF830 /* GameSetupViewController.swift */; };
+		AA8B65071C1A7A0A001AC072 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B65061C1A7A0A001AC072 /* NotificationCenter.framework */; };
+		AA8B650A1C1A7A0A001AC072 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B65091C1A7A0A001AC072 /* TodayViewController.swift */; };
+		AA8B650D1C1A7A0A001AC072 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8B650B1C1A7A0A001AC072 /* MainInterface.storyboard */; };
+		AA8B65111C1A7A0A001AC072 /* TodayGameExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA8B65051C1A7A0A001AC072 /* TodayGameExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA8B65161C1A8BF2001AC072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0CFDCE1BEACC6E008B03C5 /* Assets.xcassets */; };
+		AA8B651C1C1B6E9A001AC072 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8B651B1C1B6E9A001AC072 /* art.scnassets */; };
+		AA8B651E1C1B6EA2001AC072 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B651D1C1B6EA2001AC072 /* GameViewController.swift */; };
 		AA9397C81C1941DC001FBD48 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9397C71C1941DC001FBD48 /* LeaderboardTableViewCell.swift */; };
 		AA9397CA1C19420A001FBD48 /* LeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9397C91C19420A001FBD48 /* LeaderboardTableViewController.swift */; };
 		AA9397CC1C1942ED001FBD48 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9397CB1C1942ED001FBD48 /* FriendsTableViewCell.swift */; };
@@ -44,14 +49,33 @@
 			remoteGlobalIDString = AA0CFDC11BEACC6E008B03C5;
 			remoteInfo = NavyWarfare;
 		};
+		AA8B650F1C1A7A0A001AC072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0CFDBA1BEACC6E008B03C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA8B65041C1A7A0A001AC072;
+			remoteInfo = TodayGameExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AA8B65151C1A7A0A001AC072 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AA8B65111C1A7A0A001AC072 /* TodayGameExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F2630BE54CD79E77C0CDA6F /* Pods-NavyWarfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare.release.xcconfig"; sourceTree = "<group>"; };
 		AA0CFDC21BEACC6E008B03C5 /* NavyWarfare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavyWarfare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0CFDC51BEACC6E008B03C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA0CFDC71BEACC6E008B03C5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		AA0CFDC91BEACC6E008B03C5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AA0CFDCE1BEACC6E008B03C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA0CFDD31BEACC6E008B03C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0CFDD81BEACC6E008B03C5 /* NavyWarfareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavyWarfareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +94,13 @@
 		AA21717A1C0F9A00000FF830 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AA21717E1C0FBBCB000FF830 /* BackgroundTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTableViewController.swift; sourceTree = "<group>"; };
 		AA2171831C0FDBA3000FF830 /* GameSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSetupViewController.swift; sourceTree = "<group>"; };
+		AA8B65051C1A7A0A001AC072 /* TodayGameExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayGameExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA8B65061C1A7A0A001AC072 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		AA8B65091C1A7A0A001AC072 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		AA8B650C1C1A7A0A001AC072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		AA8B650E1C1A7A0A001AC072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA8B651B1C1B6E9A001AC072 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		AA8B651D1C1B6EA2001AC072 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AA9397C71C1941DC001FBD48 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		AA9397C91C19420A001FBD48 /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
 		AA9397CB1C1942ED001FBD48 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
@@ -101,6 +132,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA8B65021C1A7A0A001AC072 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8B65071C1A7A0A001AC072 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -110,6 +149,7 @@
 				AA0CFDC41BEACC6E008B03C5 /* NavyWarfare */,
 				AA0CFDDB1BEACC6E008B03C5 /* NavyWarfareTests */,
 				AA0CFDE61BEACC6E008B03C5 /* NavyWarfareUITests */,
+				AA8B65081C1A7A0A001AC072 /* TodayGameExtension */,
 				AA0CFDC31BEACC6E008B03C5 /* Products */,
 				C87BBE2FA67A69B47EDAA4E5 /* Pods */,
 				D0385BF03A9CD874873B77D7 /* Frameworks */,
@@ -122,6 +162,7 @@
 				AA0CFDC21BEACC6E008B03C5 /* NavyWarfare.app */,
 				AA0CFDD81BEACC6E008B03C5 /* NavyWarfareTests.xctest */,
 				AA0CFDE31BEACC6E008B03C5 /* NavyWarfareUITests.xctest */,
+				AA8B65051C1A7A0A001AC072 /* TodayGameExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,7 +179,6 @@
 				AA21717C1C0FBAF1000FF830 /* Settings */,
 				AA21716E1C0E1DD8000FF830 /* Friends */,
 				AA9397C61C1941A9001FBD48 /* Leaderboard */,
-				AA0CFDC71BEACC6E008B03C5 /* art.scnassets */,
 			);
 			path = NavyWarfare;
 			sourceTree = "<group>";
@@ -181,6 +221,7 @@
 				AA1D5E761BF5342A0051C8C2 /* NavyWarfare-Bridging-Header.h */,
 				AA21716C1C0E1D2B000FF830 /* Wireframe.png */,
 				AA2171721C0E886F000FF830 /* PFUserExtension.swift */,
+				AA8B651B1C1B6E9A001AC072 /* art.scnassets */,
 			);
 			name = "App Items";
 			sourceTree = "<group>";
@@ -196,7 +237,7 @@
 		AA21717D1C0FBB10000FF830 /* GameView */ = {
 			isa = PBXGroup;
 			children = (
-				AA0CFDC91BEACC6E008B03C5 /* GameViewController.swift */,
+				AA8B651D1C1B6EA2001AC072 /* GameViewController.swift */,
 			);
 			name = GameView;
 			sourceTree = "<group>";
@@ -225,6 +266,16 @@
 			name = NewGame;
 			sourceTree = "<group>";
 		};
+		AA8B65081C1A7A0A001AC072 /* TodayGameExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AA8B65091C1A7A0A001AC072 /* TodayViewController.swift */,
+				AA8B650B1C1A7A0A001AC072 /* MainInterface.storyboard */,
+				AA8B650E1C1A7A0A001AC072 /* Info.plist */,
+			);
+			path = TodayGameExtension;
+			sourceTree = "<group>";
+		};
 		AA9397C61C1941A9001FBD48 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */,
+				AA8B65061C1A7A0A001AC072 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -264,10 +316,12 @@
 				AA0CFDC01BEACC6E008B03C5 /* Resources */,
 				1C791F811A9E208F1B2AFD51 /* Embed Pods Frameworks */,
 				478C883DF69E31BCDE6C2A4C /* Copy Pods Resources */,
+				AA8B65151C1A7A0A001AC072 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AA8B65101C1A7A0A001AC072 /* PBXTargetDependency */,
 			);
 			name = NavyWarfare;
 			productName = NavyWarfare;
@@ -310,13 +364,30 @@
 			productReference = AA0CFDE31BEACC6E008B03C5 /* NavyWarfareUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AA8B65041C1A7A0A001AC072 /* TodayGameExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA8B65141C1A7A0A001AC072 /* Build configuration list for PBXNativeTarget "TodayGameExtension" */;
+			buildPhases = (
+				AA8B65011C1A7A0A001AC072 /* Sources */,
+				AA8B65021C1A7A0A001AC072 /* Frameworks */,
+				AA8B65031C1A7A0A001AC072 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayGameExtension;
+			productName = TodayGameExtension;
+			productReference = AA8B65051C1A7A0A001AC072 /* TodayGameExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AA0CFDBA1BEACC6E008B03C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Ethan Christensen";
 				TargetAttributes = {
@@ -333,6 +404,10 @@
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = MEJZ8226EP;
 						TestTargetID = AA0CFDC11BEACC6E008B03C5;
+					};
+					AA8B65041C1A7A0A001AC072 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = MEJZ8226EP;
 					};
 				};
 			};
@@ -352,6 +427,7 @@
 				AA0CFDC11BEACC6E008B03C5 /* NavyWarfare */,
 				AA0CFDD71BEACC6E008B03C5 /* NavyWarfareTests */,
 				AA0CFDE21BEACC6E008B03C5 /* NavyWarfareUITests */,
+				AA8B65041C1A7A0A001AC072 /* TodayGameExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -363,7 +439,7 @@
 			files = (
 				AA21716D1C0E1D2B000FF830 /* Wireframe.png in Resources */,
 				AA9397CE1C19437D001FBD48 /* Main.storyboard in Resources */,
-				AA0CFDC81BEACC6E008B03C5 /* art.scnassets in Resources */,
+				AA8B651C1C1B6E9A001AC072 /* art.scnassets in Resources */,
 				AA0CFDCF1BEACC6E008B03C5 /* Assets.xcassets in Resources */,
 				AA2171771C0F6EBB000FF830 /* OceanBack.gif in Resources */,
 			);
@@ -380,6 +456,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA8B65031C1A7A0A001AC072 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8B65161C1A8BF2001AC072 /* Assets.xcassets in Resources */,
+				AA8B650D1C1A7A0A001AC072 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,11 +527,11 @@
 				AA9397C81C1941DC001FBD48 /* LeaderboardTableViewCell.swift in Sources */,
 				AA9397CA1C19420A001FBD48 /* LeaderboardTableViewController.swift in Sources */,
 				AA9397CC1C1942ED001FBD48 /* FriendsTableViewCell.swift in Sources */,
+				AA8B651E1C1B6EA2001AC072 /* GameViewController.swift in Sources */,
 				AA2171731C0E886F000FF830 /* PFUserExtension.swift in Sources */,
 				AA21717B1C0F9A00000FF830 /* SettingsViewController.swift in Sources */,
 				AA1D5E7C1BF537720051C8C2 /* HomeViewController.swift in Sources */,
 				AA2171841C0FDBA3000FF830 /* GameSetupViewController.swift in Sources */,
-				AA0CFDCA1BEACC6E008B03C5 /* GameViewController.swift in Sources */,
 				AA21717F1C0FBBCB000FF830 /* BackgroundTableViewController.swift in Sources */,
 				AA2171711C0E1EBF000FF830 /* FriendsTableViewController.swift in Sources */,
 				AA0CFDC61BEACC6E008B03C5 /* AppDelegate.swift in Sources */,
@@ -469,6 +554,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA8B65011C1A7A0A001AC072 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8B650A1C1A7A0A001AC072 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -482,7 +575,23 @@
 			target = AA0CFDC11BEACC6E008B03C5 /* NavyWarfare */;
 			targetProxy = AA0CFDE41BEACC6E008B03C5 /* PBXContainerItemProxy */;
 		};
+		AA8B65101C1A7A0A001AC072 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA8B65041C1A7A0A001AC072 /* TodayGameExtension */;
+			targetProxy = AA8B650F1C1A7A0A001AC072 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA8B650B1C1A7A0A001AC072 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA8B650C1C1A7A0A001AC072 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AA0CFDEA1BEACC6E008B03C5 /* Debug */ = {
@@ -572,6 +681,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NavyWarfare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -589,6 +699,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NavyWarfare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -649,6 +760,31 @@
 			};
 			name = Release;
 		};
+		AA8B65121C1A7A0A001AC072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = TodayGameExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EthansStrangeDesign.NavyWarfare.TodayGameExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AA8B65131C1A7A0A001AC072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TodayGameExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EthansStrangeDesign.NavyWarfare.TodayGameExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -687,6 +823,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AA8B65141C1A7A0A001AC072 /* Build configuration list for PBXNativeTarget "TodayGameExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA8B65121C1A7A0A001AC072 /* Debug */,
+				AA8B65131C1A7A0A001AC072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

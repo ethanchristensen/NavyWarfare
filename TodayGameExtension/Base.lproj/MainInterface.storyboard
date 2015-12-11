@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="TodayGameExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Navy Warfare Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
+                                <rect key="frame" x="16" y="7" width="157" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="E14-nG-xWO"/>
+                                    <constraint firstAttribute="height" constant="21" id="oQ7-mN-ALn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdV-T8-ebQ">
+                                <rect key="frame" x="0.0" y="35" width="320" height="235"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTx-ab-Fb9">
+                                        <rect key="frame" x="8" y="8" width="121" height="30"/>
+                                        <state key="normal" title="Play NavyWarfare"/>
+                                        <connections>
+                                            <action selector="returnToGame:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="V8G-Yj-5Qe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="C6d-xv-a2x"/>
+                                    <constraint firstAttribute="height" constant="235" id="TuP-2t-cux"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS5-YD-ZUH">
+                                <rect key="frame" x="286" y="8" width="14" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="dKY-EK-ca1"/>
+                                    <constraint firstAttribute="width" constant="14" id="roZ-Lg-1tl"/>
+                                </constraints>
+                                <state key="normal" image="caret"/>
+                                <connections>
+                                    <action selector="showMore:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="0rs-x0-xME"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="sS5-YD-ZUH" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="113" id="0kX-lF-hls"/>
+                            <constraint firstItem="sS5-YD-ZUH" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="0pL-bO-VX4"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="7" id="1ix-5k-Zda"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="16" id="GPH-Iz-tRW"/>
+                            <constraint firstItem="QdV-T8-ebQ" firstAttribute="top" secondItem="sS5-YD-ZUH" secondAttribute="bottom" constant="5" id="M7H-Kz-Jb6"/>
+                            <constraint firstAttribute="trailing" secondItem="sS5-YD-ZUH" secondAttribute="trailing" constant="20" id="Uj2-3m-DX9"/>
+                            <constraint firstItem="QdV-T8-ebQ" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="7" id="h4V-96-h1v"/>
+                            <constraint firstItem="QdV-T8-ebQ" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="hsY-6H-22D"/>
+                            <constraint firstAttribute="trailing" secondItem="QdV-T8-ebQ" secondAttribute="trailing" id="p13-AP-JIZ"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="QdV-T8-ebQ" secondAttribute="bottom" id="tk6-ap-abh"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="270"/>
+                    <connections>
+                        <outlet property="showMoreButton" destination="sS5-YD-ZUH" id="NM5-wC-VYH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="caret" width="14" height="9"/>
+    </resources>
+</document>
