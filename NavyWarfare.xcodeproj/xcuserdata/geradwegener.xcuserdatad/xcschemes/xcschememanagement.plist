@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>TodayGameExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>AA0CFDE21BEACC6E008B03C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA8B65041C1A7A0A001AC072</key>
 		<dict>
 			<key>primary</key>
 			<true/>

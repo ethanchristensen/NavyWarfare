@@ -8,6 +8,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>navyWarfare</string>
+				<string>fb1493201587650468</string>
 			</array>
 			<key>CFBundleURLName</key>
 			<string>EthansStrangeDesign.NavyWarfare</string>

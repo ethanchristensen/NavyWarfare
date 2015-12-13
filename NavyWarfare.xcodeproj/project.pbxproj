@@ -30,7 +30,7 @@
 		AA9397C81C1941DC001FBD48 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9397C71C1941DC001FBD48 /* LeaderboardTableViewCell.swift */; };
 		AA9397CA1C19420A001FBD48 /* LeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9397C91C19420A001FBD48 /* LeaderboardTableViewController.swift */; };
 		AA9397CC1C1942ED001FBD48 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9397CB1C1942ED001FBD48 /* FriendsTableViewCell.swift */; };
-		AA9397CE1C19437D001FBD48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9397CD1C19437D001FBD48 /* Main.storyboard */; };
+		D2C603DB1C1DB4BC002878A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C603DA1C1DB4BC002878A9 /* Main.storyboard */; };
 		FC66893C08F5D96B60E333A2 /* Pods_NavyWarfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,9 +104,9 @@
 		AA9397C71C1941DC001FBD48 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		AA9397C91C19420A001FBD48 /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
 		AA9397CB1C1942ED001FBD48 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
-		AA9397CD1C19437D001FBD48 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NavyWarfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9355AC3B8A34F5A0D4FC704 /* Pods-NavyWarfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare.debug.xcconfig"; sourceTree = "<group>"; };
+		D2C603DA1C1DB4BC002878A9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +170,7 @@
 		AA0CFDC41BEACC6E008B03C5 /* NavyWarfare */ = {
 			isa = PBXGroup;
 			children = (
-				AA9397CD1C19437D001FBD48 /* Main.storyboard */,
+				D2C603DA1C1DB4BC002878A9 /* Main.storyboard */,
 				AA2171811C0FD7F6000FF830 /* Login */,
 				AA21716F1C0E1E26000FF830 /* App Items */,
 				AA2171801C0FC46A000FF830 /* Home */,
@@ -438,7 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA21716D1C0E1D2B000FF830 /* Wireframe.png in Resources */,
-				AA9397CE1C19437D001FBD48 /* Main.storyboard in Resources */,
+				D2C603DB1C1DB4BC002878A9 /* Main.storyboard in Resources */,
 				AA8B651C1C1B6E9A001AC072 /* art.scnassets in Resources */,
 				AA0CFDCF1BEACC6E008B03C5 /* Assets.xcassets in Resources */,
 				AA2171771C0F6EBB000FF830 /* OceanBack.gif in Resources */,
@@ -831,6 +831,7 @@
 				AA8B65131C1A7A0A001AC072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
