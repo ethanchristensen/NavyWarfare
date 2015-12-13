@@ -18,6 +18,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     var lastRotation = CGFloat()
     var rotateGesture = UIRotationGestureRecognizer()
     var lastSelectedShip = String()
+    var playersAttackingShip = String()
     var attacking = Bool()
     var attackDamage = Int()
     var ShipsHealth = ["BattleshipSupporter": 100, "BattleshipCruiser": 100]
@@ -28,12 +29,14 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var controllerView: UIView!
     
-    var player2Id: String? {
+    var player2Id: PFUser? {
         didSet {
             //update the view.
             self.createGameObject()
         }
     }
+    
+    var gameObject:PFObject = PFUser.currentUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +45,10 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         scene = SCNScene(named: "art.scnassets/Small Tropical Island.scn")!
         // create and add a camera to the scene
         cameraNode.camera = SCNCamera()
-//        cameraNode.camera!.usesOrthographicProjection = true
-//        cameraNode.camera!.orthographicScale = 4;
-//        cameraNode.camera!.zNear = 0
-//        cameraNode.camera!.zFar = 100
+        //        cameraNode.camera!.usesOrthographicProjection = true
+        //        cameraNode.camera!.orthographicScale = 4;
+        //        cameraNode.camera!.zNear = 0
+        //        cameraNode.camera!.zFar = 100
         scene.rootNode.addChildNode(cameraNode)
         //self.controllerView.hidden = true
         // place the camera
@@ -94,7 +97,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         
         
         // show statistics such as fps and timing information
-        scnView.showsStatistics = false
+        scnView.showsStatistics = true
         
         // configure the view
         scnView.backgroundColor = UIColor.whiteColor()
@@ -144,9 +147,9 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         
         worldNode.position.x += Float(translation.x)/10
         worldNode.position.z += Float(translation.y)/10
-       // worldNode.position.z += Float(view.center.y + translation.y)/worldNode.position.z
-            //CGPoint(x:view.center.x + translation.x,
-         //   y:view.center.y + translation.y)
+        // worldNode.position.z += Float(view.center.y + translation.y)/worldNode.position.z
+        //CGPoint(x:view.center.x + translation.x,
+        //   y:view.center.y + translation.y)
         //var point = rotateGesture.locationInView()
         //var currentTrans = sender.view.transform
         //var newTrans = CGAffineTransformRotate(currentTrans, rotation)
@@ -197,12 +200,12 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             
             // on completion - unhighlight
             SCNTransaction.setCompletionBlock {
-            SCNTransaction.begin()
-            SCNTransaction.setAnimationDuration(0.5)
-            
-            material.emission.contents = UIColor.blackColor()
-            
-            SCNTransaction.commit()
+                SCNTransaction.begin()
+                SCNTransaction.setAnimationDuration(0.5)
+                
+                material.emission.contents = UIColor.blackColor()
+                
+                SCNTransaction.commit()
             }
             
             material.emission.contents = UIColor.redColor()
@@ -213,19 +216,49 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func doDamage(){
+        var shipSunk = ""
         let ship = scene.rootNode.childNodeWithName(self.lastSelectedShip, recursively: true)
         if(ship != nil){
             ShipsHealth.updateValue(ShipsHealth[lastSelectedShip]! - attackDamage, forKey: lastSelectedShip)
             if(ShipsHealth[lastSelectedShip]! <= 0){
-                destroyShip(ship!)
+                shipSunk = destroyShip(ship!)
             }
         }
+        SendAttackDataToParse(shipSunk)
     }
     
-    func destroyShip(ship: SCNNode){
+    func SendAttackDataToParse(lastShipSunk: String){
+        var game = PFObject(className: "Game")
+        if(playerTurn == true){
+            game["turn"] = false
+        } else{
+            game["turn"] = true
+        }
+        if(attacking){
+            game["attackedShip"] = lastSelectedShip
+        }
+        game["shipsunk"] = lastShipSunk
+        game["attack"] = attacking
+        game["ship"] = playersAttackingShip
+    }
+    
+    func SendMoveDataToParse(x: Float, z: Float){
+        var game = PFObject(className: "Game")
+        if(playerTurn == true){
+            game["turn"] = false
+        } else{
+            game["turn"] = true
+        }
+        game["x"] = x
+        game["z"] = z
+        game["ship"] = lastSelectedShip
+    }
+    
+    func destroyShip(ship: SCNNode) -> String{
         let moveUp = SCNAction.moveByX(0.0, y: -1.0, z: 0.0, duration: 2.0)
         ship.pivot = SCNMatrix4MakeRotation(Float(M_PI_4*2), 1, 0, 0)
         ship.runAction(moveUp)
+        return lastSelectedShip
     }
     
     func degToRad(deg: Float)->Float {
@@ -258,12 +291,13 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         let ship = scene.rootNode.childNodeWithName(self.lastSelectedShip, recursively: true)
         
         if(ship != nil){
-           // let rotate = SCNAction.rotateToAxisAngle(<#T##axisAngle: SCNVector4##SCNVector4#>, duration: <#T##NSTimeInterval#>)
+            // let rotate = SCNAction.rotateToAxisAngle(<#T##axisAngle: SCNVector4##SCNVector4#>, duration: <#T##NSTimeInterval#>)
             let moveUp = SCNAction.moveByX(0.0, y: 0.0, z: -0.5, duration: 1.0)
             //ship!.runAction(rotate)
-        ship?.pivot = SCNMatrix4MakeRotation(Float(M_PI_2*2), 0, 1, 0)
+            ship?.pivot = SCNMatrix4MakeRotation(Float(M_PI_2*2), 0, 1, 0)
             ship!.runAction(moveUp)
         }
+        SendMoveDataToParse((ship?.position.x)!, z: (ship?.position.z)!)
     }
     
     @IBAction func leftMovementAction(sender: AnyObject) {
@@ -273,6 +307,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             ship?.pivot = SCNMatrix4MakeRotation(Float(-M_PI_2), 0, 1, 0)
             ship!.runAction(moveUp)
         }
+        SendMoveDataToParse((ship?.position.x)!, z: (ship?.position.z)!)
     }
     
     @IBAction func backMovementAction(sender: AnyObject) {
@@ -282,6 +317,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             ship?.pivot = SCNMatrix4MakeRotation(Float(M_PI_2*4), 0, 1, 0)
             ship!.runAction(moveUp)
         }
+        SendMoveDataToParse((ship?.position.x)!, z: (ship?.position.z)!)
     }
     
     @IBAction func rightMovementAction(sender: AnyObject) {
@@ -292,12 +328,14 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             ship!.runAction(moveUp)
             
         }
+        SendMoveDataToParse((ship?.position.x)!, z: (ship?.position.z)!)
     }
     
     
     @IBAction func attackButtonAction(sender: AnyObject) {
         attacking = true
         attackDamage = ShipsDamage[lastSelectedShip]!
+        playersAttackingShip = lastSelectedShip
     }
     
     @IBAction func cancelButtonAction(sender: AnyObject) {
@@ -307,10 +345,21 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func createGameObject(){
-        var game = PFObject(className: "Game")
-        game["player1"] = PFUser.currentUser()!.objectId
+        
+        let game = PFObject(className: "Game")
+        game["player1"] = PFUser.currentUser()
+        game["player2"] = player2Id
         game["turn"] = true
         game["ship"] = ""
-        //game[]
+        game["x"] = 0.0
+        game["z"] = 0.0
+        game["attack"] = false
+        game["attackedShip"] = ""
+        game.saveInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                self.gameObject = game
+                print("GameId "+self.gameObject.objectId!)
+            }
+        }
     }
 }

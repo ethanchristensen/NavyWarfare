@@ -13,7 +13,6 @@
 		AA0CFDE81BEACC6E008B03C5 /* NavyWarfareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDE71BEACC6E008B03C5 /* NavyWarfareUITests.swift */; };
 		AA1D5E7C1BF537720051C8C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E7B1BF537720051C8C2 /* HomeViewController.swift */; };
 		AA21716D1C0E1D2B000FF830 /* Wireframe.png in Resources */ = {isa = PBXBuildFile; fileRef = AA21716C1C0E1D2B000FF830 /* Wireframe.png */; };
-		AA2171711C0E1EBF000FF830 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2171701C0E1EBF000FF830 /* FriendsTableViewController.swift */; };
 		AA2171731C0E886F000FF830 /* PFUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2171721C0E886F000FF830 /* PFUserExtension.swift */; };
 		AA2171771C0F6EBB000FF830 /* OceanBack.gif in Resources */ = {isa = PBXBuildFile; fileRef = AA2171761C0F6EBB000FF830 /* OceanBack.gif */; };
 		AA2171791C0F99AA000FF830 /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2171781C0F99AA000FF830 /* BackgroundViewController.swift */; };
@@ -29,7 +28,6 @@
 		AA8B651E1C1B6EA2001AC072 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B651D1C1B6EA2001AC072 /* GameViewController.swift */; };
 		AA9397C81C1941DC001FBD48 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9397C71C1941DC001FBD48 /* LeaderboardTableViewCell.swift */; };
 		AA9397CA1C19420A001FBD48 /* LeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9397C91C19420A001FBD48 /* LeaderboardTableViewController.swift */; };
-		AA9397CC1C1942ED001FBD48 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9397CB1C1942ED001FBD48 /* FriendsTableViewCell.swift */; };
 		D2C603DB1C1DB4BC002878A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C603DA1C1DB4BC002878A9 /* Main.storyboard */; };
 		FC66893C08F5D96B60E333A2 /* Pods_NavyWarfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */; };
 /* End PBXBuildFile section */
@@ -87,7 +85,6 @@
 		AA1D5E761BF5342A0051C8C2 /* NavyWarfare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NavyWarfare-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA1D5E7B1BF537720051C8C2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA21716C1C0E1D2B000FF830 /* Wireframe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wireframe.png; sourceTree = "<group>"; };
-		AA2171701C0E1EBF000FF830 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		AA2171721C0E886F000FF830 /* PFUserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFUserExtension.swift; sourceTree = "<group>"; };
 		AA2171761C0F6EBB000FF830 /* OceanBack.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = OceanBack.gif; sourceTree = "<group>"; };
 		AA2171781C0F99AA000FF830 /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +100,6 @@
 		AA8B651D1C1B6EA2001AC072 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AA9397C71C1941DC001FBD48 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		AA9397C91C19420A001FBD48 /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
-		AA9397CB1C1942ED001FBD48 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NavyWarfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9355AC3B8A34F5A0D4FC704 /* Pods-NavyWarfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare.debug.xcconfig"; sourceTree = "<group>"; };
 		D2C603DA1C1DB4BC002878A9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -177,7 +173,6 @@
 				AA2171821C0FDB6A000FF830 /* NewGame */,
 				AA21717D1C0FBB10000FF830 /* GameView */,
 				AA21717C1C0FBAF1000FF830 /* Settings */,
-				AA21716E1C0E1DD8000FF830 /* Friends */,
 				AA9397C61C1941A9001FBD48 /* Leaderboard */,
 			);
 			path = NavyWarfare;
@@ -199,16 +194,6 @@
 				AA0CFDE91BEACC6E008B03C5 /* Info.plist */,
 			);
 			path = NavyWarfareUITests;
-			sourceTree = "<group>";
-		};
-		AA21716E1C0E1DD8000FF830 /* Friends */ = {
-			isa = PBXGroup;
-			children = (
-				AA21717E1C0FBBCB000FF830 /* BackgroundTableViewController.swift */,
-				AA2171701C0E1EBF000FF830 /* FriendsTableViewController.swift */,
-				AA9397CB1C1942ED001FBD48 /* FriendsTableViewCell.swift */,
-			);
-			name = Friends;
 			sourceTree = "<group>";
 		};
 		AA21716F1C0E1E26000FF830 /* App Items */ = {
@@ -279,6 +264,7 @@
 		AA9397C61C1941A9001FBD48 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
+				AA21717E1C0FBBCB000FF830 /* BackgroundTableViewController.swift */,
 				AA9397C91C19420A001FBD48 /* LeaderboardTableViewController.swift */,
 				AA9397C71C1941DC001FBD48 /* LeaderboardTableViewCell.swift */,
 			);
@@ -526,14 +512,12 @@
 				AA2171791C0F99AA000FF830 /* BackgroundViewController.swift in Sources */,
 				AA9397C81C1941DC001FBD48 /* LeaderboardTableViewCell.swift in Sources */,
 				AA9397CA1C19420A001FBD48 /* LeaderboardTableViewController.swift in Sources */,
-				AA9397CC1C1942ED001FBD48 /* FriendsTableViewCell.swift in Sources */,
 				AA8B651E1C1B6EA2001AC072 /* GameViewController.swift in Sources */,
 				AA2171731C0E886F000FF830 /* PFUserExtension.swift in Sources */,
 				AA21717B1C0F9A00000FF830 /* SettingsViewController.swift in Sources */,
 				AA1D5E7C1BF537720051C8C2 /* HomeViewController.swift in Sources */,
 				AA2171841C0FDBA3000FF830 /* GameSetupViewController.swift in Sources */,
 				AA21717F1C0FBBCB000FF830 /* BackgroundTableViewController.swift in Sources */,
-				AA2171711C0E1EBF000FF830 /* FriendsTableViewController.swift in Sources */,
 				AA0CFDC61BEACC6E008B03C5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
