@@ -89,7 +89,7 @@ class LeaderboardTableViewController: BackgroundTableViewController {
                 var user = object["user"] as! PFUser
                 
                 if(user.objectId == PFUser.currentUser()?.objectId){
-                    cell.addFriendButton.hidden = true
+                    cell.startGameButton.hidden = true
                 }
                 
                 do{
@@ -98,7 +98,6 @@ class LeaderboardTableViewController: BackgroundTableViewController {
                     print("Error fetching user")
                 }
                 
-                
                 let uname = user.username
                 //let uname = object["username"] as? String
                 let wins = object["wins"] as? Int
@@ -106,6 +105,7 @@ class LeaderboardTableViewController: BackgroundTableViewController {
                 cell.username.text = uname
                 cell.wins.text = "\(wins!)"
                 cell.losses.text = "\(losses!)"
+                cell.hiddenObjectIdLabel.text = user.objectId
                 
                 
             }
@@ -114,21 +114,6 @@ class LeaderboardTableViewController: BackgroundTableViewController {
         
     }
     
-    
-    func getUsername(user: PFUser) -> PFObject {
-        let object = PFObject(withoutDataWithClassName:"User", objectId:user.objectId)
-        object.fetchFromLocalDatastoreInBackground().continueWithBlock({
-            (task: BFTask!) -> AnyObject! in
-            if task.error != nil {
-                // There was an error.
-                return task
-            }
-            return task
-        })
-        
-        return object
-
-    }
     
     /*
     // Override to support conditional editing of the table view.
@@ -165,14 +150,21 @@ class LeaderboardTableViewController: BackgroundTableViewController {
     }
     */
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        if segue.identifier == "StartGameSegue" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as? LeaderboardTableViewCell
+                let controller = segue.destinationViewController as! GameViewController
+                controller.player2Id = cell?.hiddenObjectIdLabel.text
+                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
-    */
+    
     
 }

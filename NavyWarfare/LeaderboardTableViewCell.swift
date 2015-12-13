@@ -10,13 +10,13 @@ import UIKit
 
 class LeaderboardTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var addFriendButton: UIButton!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var wins: UILabel!
     @IBOutlet weak var losses: UILabel!
-    @IBAction func addFriendButtonAction(sender: UIButton) {
-        
-    }
+
+    @IBOutlet weak var hiddenObjectIdLabel: UILabel!
+    
+    @IBOutlet weak var startGameButton: UIButton!
     
     
 }
