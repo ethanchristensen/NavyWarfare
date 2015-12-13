@@ -28,6 +28,13 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var controllerView: UIView!
     
+    var player2Id: String? {
+        didSet {
+            //update the view.
+            self.createGameObject()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lastSelectedShip = ""
@@ -35,10 +42,10 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         scene = SCNScene(named: "art.scnassets/Small Tropical Island.scn")!
         // create and add a camera to the scene
         cameraNode.camera = SCNCamera()
-        cameraNode.camera!.usesOrthographicProjection = true
-        cameraNode.camera!.orthographicScale = 4;
-        cameraNode.camera!.zNear = 0
-        cameraNode.camera!.zFar = 100
+//        cameraNode.camera!.usesOrthographicProjection = true
+//        cameraNode.camera!.orthographicScale = 4;
+//        cameraNode.camera!.zNear = 0
+//        cameraNode.camera!.zFar = 100
         scene.rootNode.addChildNode(cameraNode)
         //self.controllerView.hidden = true
         // place the camera
@@ -50,23 +57,22 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
         lightNode.light!.type = SCNLightTypeOmni
-        lightNode.position = SCNVector3(x: 0, y: 20, z: 0)
-        //scene.rootNode.addChildNode(lightNode)
+        lightNode.light!.color = UIColor(white: 0.95, alpha: 1.0)
+        lightNode.position = SCNVector3(x: 0, y: 10, z: 0)
+        scene.rootNode.addChildNode(lightNode)
         
         // create and add an ambient light to the scene
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
         ambientLightNode.light!.type = SCNLightTypeAmbient
-        ambientLightNode.light!.color = UIColor.blueColor()
+        ambientLightNode.light!.color = UIColor(white: 0.35, alpha: 1.0)
         //scene.rootNode.addChildNode(ambientLightNode)
         
         // retrieve the ship node
         let ship = scene.rootNode.childNodeWithName("Island", recursively: true)!
         
         cameraNode.position = SCNVector3(x: 0, y: 10, z: 0)
-        let constraint = SCNLookAtConstraint(target: ship);
-        constraint.gimbalLockEnabled = true
-        cameraNode.constraints = [constraint]
+        cameraNode.eulerAngles = SCNVector3Make(Float(-M_PI/2), 0, 0)
         /*let cameraOrbit = SCNNode()
         // rotate it (I've left out some animation code here to show just the rotation)
         cameraOrbit.eulerAngles.x -= Float(M_PI_4)
@@ -88,7 +94,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         
         
         // show statistics such as fps and timing information
-        scnView.showsStatistics = true
+        scnView.showsStatistics = false
         
         // configure the view
         scnView.backgroundColor = UIColor.whiteColor()
@@ -108,7 +114,8 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         worldNode.addChildNode(ship)
         worldNode.addChildNode(ship1)
         worldNode.addChildNode(ship2)
-        
+        worldNode.position.x = 0;
+        worldNode.position.z = 0;
         scene.rootNode.addChildNode(worldNode)
         //scrollView.contentSize = cameraNode.camera!.accessibilityFrame.size
         // scrollView.addSubview(cameraNode.camera!.)
@@ -126,14 +133,19 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func handlePan(sender:UIPanGestureRecognizer){
+        print("World 1")
+        print(worldNode.position.x)
         let translation = sender.translationInView(self.view)
         if let view = sender.view {
             view.center = CGPoint(x:view.center.x + translation.x,
                 y:view.center.y + translation.y)
         }
         sender.setTranslation(CGPointZero, inView: self.view)
-       
-        //worldNode.position = CGPoint(x:view.center.x + translation.x,
+        
+        worldNode.position.x += Float(translation.x)/10
+        worldNode.position.z += Float(translation.y)/10
+       // worldNode.position.z += Float(view.center.y + translation.y)/worldNode.position.z
+            //CGPoint(x:view.center.x + translation.x,
          //   y:view.center.y + translation.y)
         //var point = rotateGesture.locationInView()
         //var currentTrans = sender.view.transform
