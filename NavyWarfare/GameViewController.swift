@@ -223,7 +223,6 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     
     func handleTap(gestureRecognize: UIGestureRecognizer) {
         if(yourTurn){
-        
         // retrieve the SCNView
         let scnView = self.gameView as! SCNView
         
@@ -246,7 +245,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             let selectedNode = result.node!
             if(player1 && selectedNode.name!.containsString("2") || player1 == false && selectedNode.name!.containsString("1")){
                 return
-            }
+            }else{
             if(selectedNode.name!.containsString("Battleship")){
                 lastSelectedShip = selectedNode.name!
                 lastSelectedShip += "Game"
@@ -273,6 +272,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             
             SCNTransaction.commit()
          }
+        }
         }
     }
     
