@@ -151,8 +151,6 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func handlePan(sender:UIPanGestureRecognizer){
-        print("World 1")
-        print(worldNode.position.x)
         let translation = sender.translationInView(self.view)
         if let view = sender.view {
             view.center = CGPoint(x:view.center.x + translation.x,

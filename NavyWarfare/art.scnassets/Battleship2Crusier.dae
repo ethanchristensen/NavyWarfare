@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2015-12-14T20:06:35Z</created>
-  <modified>2015-12-14T20:06:35Z</modified>
+  <created>2015-12-14T20:52:46Z</created>
+  <modified>2015-12-14T20:52:46Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Z_UP</up_axis>
  </asset>
@@ -1260,7 +1260,7 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh13" name="Battleship2Support">
+   <node id="Mesh13" name="Battleship2Crusier">
     <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh13-mesh">
      <bind_material>

@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2015-12-14T19:52:39Z</created>
-  <modified>2015-12-14T19:52:39Z</modified>
+  <created>2015-12-14T20:55:41Z</created>
+  <modified>2015-12-14T20:55:41Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Z_UP</up_axis>
  </asset>
@@ -1128,8 +1128,8 @@
  </library_geometries>
  <library_visual_scenes>
   <visual_scene id="scene61">
-   <node id="Mesh01" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 1.992303e-07 1.20202e-05 6.092399e-05 0.009999786 -0.0004925132 0 0 0 1 </matrix>
+   <node id="Mesh01" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 1.992303e-07 -4.891701e-05 6.092323e-05 0.009999662 -0.0004925132 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh01-mesh">
      <bind_material>
       <technique_common>
@@ -1138,8 +1138,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh02" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh02" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh02-mesh">
      <bind_material>
       <technique_common>
@@ -1148,8 +1148,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh03" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh03" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh03-mesh">
      <bind_material>
       <technique_common>
@@ -1158,8 +1158,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh04" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh04" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh04-mesh">
      <bind_material>
       <technique_common>
@@ -1170,8 +1170,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh05" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh05" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh05-mesh">
      <bind_material>
       <technique_common>
@@ -1180,8 +1180,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh06" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh06" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh06-mesh">
      <bind_material>
       <technique_common>
@@ -1190,8 +1190,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh07" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh07" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh07-mesh">
      <bind_material>
       <technique_common>
@@ -1200,8 +1200,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh08" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh08" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh08-mesh">
      <bind_material>
       <technique_common>
@@ -1212,8 +1212,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh09" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh09" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh09-mesh">
      <bind_material>
       <technique_common>
@@ -1224,8 +1224,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh10" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh10" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh10-mesh">
      <bind_material>
       <technique_common>
@@ -1236,8 +1236,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh11" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh11" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh11-mesh">
      <bind_material>
       <technique_common>
@@ -1248,8 +1248,8 @@
      </bind_material>
     </instance_geometry>
    </node>
-   <node id="Mesh12" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+   <node id="Mesh12" name="Battleship2">
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 1.818989e-14 -0.009999769 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh12-mesh">
      <bind_material>
       <technique_common>
@@ -1261,7 +1261,7 @@
     </instance_geometry>
    </node>
    <node id="Mesh13" name="Battleship2Support">
-    <matrix>-0.01 7.323183e-08 1.201994e-05 0 -2.273738e-15 -0.00999978 6.092411e-05 0 1.20202e-05 6.092399e-05 0.009999786 0 0 0 0 1 </matrix>
+    <matrix>-0.009999881 -2.980219e-07 -4.891595e-05 0 4.547473e-14 -0.009999768 6.092403e-05 0 -4.891701e-05 6.092323e-05 0.009999662 0 0 0 0 1 </matrix>
     <instance_geometry url="#Mesh13-mesh">
      <bind_material>
       <technique_common>
