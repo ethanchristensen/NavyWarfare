@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xWi-jC-NNN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xWi-jC-NNN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -20,13 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BT9-Tz-umi">
-                                <rect key="frame" x="167" y="213" width="266" height="48"/>
+                                <rect key="frame" x="191" y="213" width="218" height="48"/>
                                 <rect key="contentStretch" x="0.69999999999999996" y="0.0" width="1" height="1"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="30"/>
                                 <color key="tintColor" red="1" green="0.82885887520000001" blue="0.17388611330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="New Random Game"/>
+                                <state key="normal" title="Available Games"/>
                                 <connections>
-                                    <segue destination="qHS-Yf-qxm" kind="show" id="sxK-En-l49"/>
+                                    <segue destination="zBq-yc-saH" kind="show" id="ECl-h3-b2b"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1d-Xb-xxv">
@@ -412,6 +412,182 @@
             </objects>
             <point key="canvasLocation" x="-839" y="393"/>
         </scene>
+        <!--Available Games-->
+        <scene sceneID="ZYa-SP-QKK">
+            <objects>
+                <tableViewController title="Available Games" id="zBq-yc-saH" customClass="AvailableGamesTableViewController" customModule="NavyWarfare" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9B3-xU-zo5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="0.0" id="kAs-SU-xtL">
+                                <rect key="frame" x="0.0" y="92" width="600" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kAs-SU-xtL" id="o2J-Dl-oXV">
+                                    <rect key="frame" x="0.0" y="-0.5" width="600" height="0.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="44" id="raf-EJ-3dF">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="raf-EJ-3dF" id="28D-gO-3L7">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIM-iU-fsX">
+                                            <rect key="frame" x="293" y="11" width="44" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="0rB-b5-834"/>
+                                                <constraint firstAttribute="width" secondItem="SIM-iU-fsX" secondAttribute="height" multiplier="44:21" id="1ty-hD-MKM"/>
+                                                <constraint firstAttribute="width" constant="44" id="YxS-Uj-x0I"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                            <color key="textColor" red="0.98044871789999999" green="0.81864169190000002" blue="0.1773805299" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3d-x7-UM5">
+                                            <rect key="frame" x="8" y="11" width="79" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="j3d-x7-UM5" secondAttribute="height" multiplier="79:21" id="3Qd-He-QYM"/>
+                                                <constraint firstAttribute="width" constant="79" id="APW-1v-RBx"/>
+                                                <constraint firstAttribute="height" constant="21" id="eD8-Kg-XwZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                            <color key="textColor" red="0.98044871789999999" green="0.81864169190000002" blue="0.1773805299" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Losses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-xn-ovx">
+                                            <rect key="frame" x="374" y="11" width="54" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="7eP-xn-ovx" secondAttribute="height" multiplier="18:7" id="Wi2-nm-987"/>
+                                                <constraint firstAttribute="width" constant="54" id="m2S-0s-Kbo"/>
+                                                <constraint firstAttribute="height" constant="21" id="wHZ-re-DhI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                            <color key="textColor" red="0.98044871789999999" green="0.81864169190000002" blue="0.1773805299" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="SIM-iU-fsX" firstAttribute="top" secondItem="28D-gO-3L7" secondAttribute="top" constant="11" id="8xp-op-MGY"/>
+                                        <constraint firstItem="j3d-x7-UM5" firstAttribute="top" secondItem="28D-gO-3L7" secondAttribute="top" constant="11" id="BlP-jg-gIT"/>
+                                        <constraint firstAttribute="bottom" secondItem="SIM-iU-fsX" secondAttribute="bottom" constant="11.5" id="PSu-fu-1kU"/>
+                                        <constraint firstItem="7eP-xn-ovx" firstAttribute="leading" secondItem="SIM-iU-fsX" secondAttribute="trailing" constant="37" id="c48-d3-igs"/>
+                                        <constraint firstAttribute="bottom" secondItem="7eP-xn-ovx" secondAttribute="bottom" constant="11.5" id="dvi-bN-JuV"/>
+                                        <constraint firstItem="SIM-iU-fsX" firstAttribute="leading" secondItem="j3d-x7-UM5" secondAttribute="trailing" constant="206" id="i9D-aN-9AY"/>
+                                        <constraint firstAttribute="bottom" secondItem="j3d-x7-UM5" secondAttribute="bottom" constant="11.5" id="keX-HJ-R6c"/>
+                                        <constraint firstItem="SIM-iU-fsX" firstAttribute="leading" secondItem="j3d-x7-UM5" secondAttribute="trailing" constant="206" id="neH-Rt-FIo"/>
+                                        <constraint firstItem="j3d-x7-UM5" firstAttribute="leading" secondItem="28D-gO-3L7" secondAttribute="leading" constant="8" id="tzM-tB-Ssp"/>
+                                        <constraint firstItem="7eP-xn-ovx" firstAttribute="top" secondItem="28D-gO-3L7" secondAttribute="top" constant="11" id="u7l-S1-ujk"/>
+                                        <constraint firstItem="7eP-xn-ovx" firstAttribute="leading" secondItem="SIM-iU-fsX" secondAttribute="trailing" constant="37" id="xqB-Ik-6ll"/>
+                                        <constraint firstAttribute="trailing" secondItem="7eP-xn-ovx" secondAttribute="trailing" constant="172" id="ydi-Th-1kR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Avb-dq-Opy" customClass="AvailableGamesTableViewCell" customModule="NavyWarfare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Avb-dq-Opy" id="sDJ-0E-9EN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zw6-B1-u3U">
+                                            <rect key="frame" x="8" y="11" width="278" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="7oX-NR-ROh"/>
+                                                <constraint firstAttribute="width" secondItem="zw6-B1-u3U" secondAttribute="height" multiplier="278:21" id="EgY-Rb-ND6"/>
+                                                <constraint firstAttribute="width" constant="278" id="Ij0-DD-73H"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPs-2Q-QJt">
+                                            <rect key="frame" x="317" y="11" width="60" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="VPs-2Q-QJt" secondAttribute="height" multiplier="20:7" id="0i1-82-Nxa"/>
+                                                <constraint firstAttribute="height" constant="21" id="OWK-ZH-P8j"/>
+                                                <constraint firstAttribute="width" constant="60" id="h6n-jl-y1d"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZR-7b-S9T">
+                                            <rect key="frame" x="485" y="7" width="107" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="107" id="Vvd-23-3V9"/>
+                                                <constraint firstAttribute="width" secondItem="0ZR-7b-S9T" secondAttribute="height" multiplier="107:30" id="h1k-Z9-qnC"/>
+                                                <constraint firstAttribute="height" constant="30" id="oqq-wq-2d9"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="15"/>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                            <state key="normal" title="Join Battle!">
+                                                <color key="titleColor" red="0.98044871789999999" green="0.81864169190000002" blue="0.1773805299" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="losses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXH-Ep-avx">
+                                            <rect key="frame" x="399" y="11" width="60" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="8aU-eZ-rMH"/>
+                                                <constraint firstAttribute="width" secondItem="oXH-Ep-avx" secondAttribute="height" multiplier="20:7" id="gfZ-Rx-F1Y"/>
+                                                <constraint firstAttribute="width" constant="60" id="j8P-Yp-4ik"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAg-74-zBq">
+                                            <rect key="frame" x="585" y="11" width="15" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.98044871789999999" green="0.81864169190000002" blue="0.1773805299" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="oXH-Ep-avx" firstAttribute="leading" secondItem="VPs-2Q-QJt" secondAttribute="trailing" constant="22" id="1ey-bN-MPJ"/>
+                                        <constraint firstItem="0ZR-7b-S9T" firstAttribute="top" secondItem="sDJ-0E-9EN" secondAttribute="top" constant="7" id="99G-dd-515"/>
+                                        <constraint firstItem="VPs-2Q-QJt" firstAttribute="leading" secondItem="zw6-B1-u3U" secondAttribute="trailing" constant="31" id="9sR-4j-Q02"/>
+                                        <constraint firstAttribute="bottom" secondItem="0ZR-7b-S9T" secondAttribute="bottom" constant="6.5" id="AOb-sb-yoc"/>
+                                        <constraint firstItem="oXH-Ep-avx" firstAttribute="leading" secondItem="VPs-2Q-QJt" secondAttribute="trailing" constant="22" id="JtW-4e-Z7b"/>
+                                        <constraint firstItem="VPs-2Q-QJt" firstAttribute="leading" secondItem="zw6-B1-u3U" secondAttribute="trailing" constant="31" id="M3Z-lp-qjQ"/>
+                                        <constraint firstItem="oXH-Ep-avx" firstAttribute="top" secondItem="sDJ-0E-9EN" secondAttribute="top" constant="11" id="SJN-H4-7fR"/>
+                                        <constraint firstAttribute="trailing" secondItem="0ZR-7b-S9T" secondAttribute="trailing" constant="8" id="TGz-89-YAO"/>
+                                        <constraint firstAttribute="bottom" secondItem="oXH-Ep-avx" secondAttribute="bottom" constant="11.5" id="UFR-oi-H9d"/>
+                                        <constraint firstItem="zw6-B1-u3U" firstAttribute="top" secondItem="sDJ-0E-9EN" secondAttribute="top" constant="11" id="Y8D-Wp-ZtZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="zw6-B1-u3U" secondAttribute="bottom" constant="11.5" id="e3x-c1-l7W"/>
+                                        <constraint firstItem="0ZR-7b-S9T" firstAttribute="leading" secondItem="oXH-Ep-avx" secondAttribute="trailing" constant="26" id="gRf-gH-X9S"/>
+                                        <constraint firstItem="zw6-B1-u3U" firstAttribute="leading" secondItem="sDJ-0E-9EN" secondAttribute="leading" constant="8" id="hcW-cE-3c4"/>
+                                        <constraint firstItem="VPs-2Q-QJt" firstAttribute="top" secondItem="sDJ-0E-9EN" secondAttribute="top" constant="11" id="kKS-gA-aSf"/>
+                                        <constraint firstItem="0ZR-7b-S9T" firstAttribute="leading" secondItem="oXH-Ep-avx" secondAttribute="trailing" constant="26" id="tV8-Iu-zO2"/>
+                                        <constraint firstAttribute="bottom" secondItem="VPs-2Q-QJt" secondAttribute="bottom" constant="11.5" id="xwo-Yk-Adm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="hiddenObjectIdLabel" destination="FAg-74-zBq" id="gLH-4j-bgO"/>
+                                    <outlet property="losses" destination="oXH-Ep-avx" id="92u-4G-b5U"/>
+                                    <outlet property="username" destination="zw6-B1-u3U" id="OCO-kj-9Km"/>
+                                    <outlet property="wins" destination="VPs-2Q-QJt" id="7dw-6O-vSh"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="JoinGameSegue" id="9zh-ma-Kw0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zBq-yc-saH" id="SeP-bl-Vqa"/>
+                            <outlet property="delegate" destination="zBq-yc-saH" id="Fdf-RZ-Ycj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Available Games" id="z17-vW-Dff"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ivV-J5-SX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1413" y="-1164"/>
+        </scene>
         <!--Leaderboard-->
         <scene sceneID="Bcn-Nm-NAj">
             <objects>
@@ -734,10 +910,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-795" y="-417"/>
+            <point key="canvasLocation" x="-663" y="-1133"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dES-sL-CeP"/>
+        <segue reference="9zh-ma-Kw0"/>
     </inferredMetricsTieBreakers>
 </document>

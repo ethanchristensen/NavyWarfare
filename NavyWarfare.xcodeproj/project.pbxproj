@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0A9B001C1E33CD00C69883 /* AvailableGamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0A9AFF1C1E33CD00C69883 /* AvailableGamesTableViewController.swift */; };
+		AA0A9B021C1E33F100C69883 /* AvailableGamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0A9B011C1E33F100C69883 /* AvailableGamesTableViewCell.swift */; };
 		AA0CFDC61BEACC6E008B03C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDC51BEACC6E008B03C5 /* AppDelegate.swift */; };
 		AA0CFDCF1BEACC6E008B03C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0CFDCE1BEACC6E008B03C5 /* Assets.xcassets */; };
 		AA0CFDDD1BEACC6E008B03C5 /* NavyWarfareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDDC1BEACC6E008B03C5 /* NavyWarfareTests.swift */; };
@@ -72,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		2F2630BE54CD79E77C0CDA6F /* Pods-NavyWarfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare.release.xcconfig"; sourceTree = "<group>"; };
+		AA0A9AFF1C1E33CD00C69883 /* AvailableGamesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableGamesTableViewController.swift; sourceTree = "<group>"; };
+		AA0A9B011C1E33F100C69883 /* AvailableGamesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableGamesTableViewCell.swift; sourceTree = "<group>"; };
 		AA0CFDC21BEACC6E008B03C5 /* NavyWarfare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavyWarfare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0CFDC51BEACC6E008B03C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA0CFDCE1BEACC6E008B03C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,6 +143,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA0A9AFE1C1E333200C69883 /* Available Games */ = {
+			isa = PBXGroup;
+			children = (
+				AA0A9AFF1C1E33CD00C69883 /* AvailableGamesTableViewController.swift */,
+				AA0A9B011C1E33F100C69883 /* AvailableGamesTableViewCell.swift */,
+			);
+			name = "Available Games";
+			sourceTree = "<group>";
+		};
 		AA0CFDB91BEACC6E008B03C5 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +186,7 @@
 				AA2171821C0FDB6A000FF830 /* NewGame */,
 				AA21717D1C0FBB10000FF830 /* GameView */,
 				AA21717C1C0FBAF1000FF830 /* Settings */,
+				AA0A9AFE1C1E333200C69883 /* Available Games */,
 				AA9397C61C1941A9001FBD48 /* Leaderboard */,
 			);
 			path = NavyWarfare;
@@ -514,7 +528,9 @@
 				AA9397CA1C19420A001FBD48 /* LeaderboardTableViewController.swift in Sources */,
 				AA8B651E1C1B6EA2001AC072 /* GameViewController.swift in Sources */,
 				AA2171731C0E886F000FF830 /* PFUserExtension.swift in Sources */,
+				AA0A9B001C1E33CD00C69883 /* AvailableGamesTableViewController.swift in Sources */,
 				AA21717B1C0F9A00000FF830 /* SettingsViewController.swift in Sources */,
+				AA0A9B021C1E33F100C69883 /* AvailableGamesTableViewCell.swift in Sources */,
 				AA1D5E7C1BF537720051C8C2 /* HomeViewController.swift in Sources */,
 				AA2171841C0FDBA3000FF830 /* GameSetupViewController.swift in Sources */,
 				AA21717F1C0FBBCB000FF830 /* BackgroundTableViewController.swift in Sources */,

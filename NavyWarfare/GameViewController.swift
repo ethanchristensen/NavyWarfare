@@ -36,7 +36,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    var gameObject:PFObject = PFUser.currentUser()
+    var gameObject:PFObject = PFUser.currentUser()!
     
     override func viewDidLoad() {
         super.viewDidLoad()

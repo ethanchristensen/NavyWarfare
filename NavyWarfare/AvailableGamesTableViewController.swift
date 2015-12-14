@@ -1,17 +1,17 @@
 //
-//  LeaderboardTableViewController.swift
+//  AvailableGamesTableViewController.swift
 //  NavyWarfare
 //
-//  Created by Ethan Christensen on 12/7/15.
+//  Created by Ethan Christensen on 12/13/15.
 //  Copyright © 2015 Ethan Christensen. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class LeaderboardTableViewController: BackgroundTableViewController {
+class AvailableGamesTableViewController: BackgroundTableViewController {
     
-    var playerList = [AnyObject]()
+    var gameList = [AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class LeaderboardTableViewController: BackgroundTableViewController {
         //self.refreshControl = refreshController
         //self.refreshControl?.addTarget(self, action: "didRefresh", forControlEvents: .ValueChanged)
         
-        loadUsers()
+        loadGames()
     }
     func insertNewObject(sender: AnyObject, index: Int) {
         //   orderList.insert(, atIndex: 0)
@@ -46,14 +46,14 @@ class LeaderboardTableViewController: BackgroundTableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return playerList.count + 1
+        return gameList.count + 1
     }
     
-    func loadUsers(){
-        let query : PFQuery = PFUser.query()!
-        //let query = PFQuery(className: "User")
+    func loadGames(){
+        //let query : PFQuery = PFUser.query()!
+        let query = PFQuery(className: "Game")
         
-        //query.whereKey("objectId", notEqualTo: (PFUser.currentUser()?.objectId)!)
+        query.whereKey("player2", equalTo: PFUser.currentUser()!)
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -61,14 +61,14 @@ class LeaderboardTableViewController: BackgroundTableViewController {
                 // The find succeeded.
                 print("Successfully retrieved \(objects!.count) users.")
                 // Do something with the found objects
-                self.playerList = objects!
+                self.gameList = objects!
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.tableView.reloadData()
                 })
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
-            }  
+            }
         }
     }
     
@@ -79,30 +79,26 @@ class LeaderboardTableViewController: BackgroundTableViewController {
             headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderCell", forIndexPath: indexPath)
             return headerCell
         } else {
-            let cell: LeaderboardTableViewCell
-            cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! LeaderboardTableViewCell
+            let cell: AvailableGamesTableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! AvailableGamesTableViewCell
             print("Load Cells")
-            if let user = playerList[indexPath.row-1] as? PFUser {
+            if let object = gameList[indexPath.row-1] as? PFObject {
                 
+                var opponent = object["player1"] as! PFUser
                 
-                if(user.objectId == PFUser.currentUser()?.objectId){
-                    cell.startGameButton.hidden = true
+                do{
+                    try opponent = PFQuery.getUserObjectWithId(opponent.objectId!)
+                } catch{
+                    print("Error fetching user")
                 }
                 
-//                do{
-//                    try user = PFQuery.getUserObjectWithId(user.objectId!)
-//                } catch{
-//                    print("Error fetching user")
-//                }
-                
-                let uname = user.username
-                //let uname = object["username"] as? String
-                let wins = user["wins"] as? Int
-                let losses = user["losses"] as? Int
+                let uname = opponent.username
+                let wins = opponent["wins"] as? Int
+                let losses = opponent["losses"] as? Int
                 cell.username.text = uname
                 cell.wins.text = "\(wins!)"
                 cell.losses.text = "\(losses!)"
-                cell.hiddenObjectIdLabel.text = user.objectId
+                cell.hiddenObjectIdLabel.text = object.objectId
                 
                 
             }
@@ -152,17 +148,13 @@ class LeaderboardTableViewController: BackgroundTableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "StartGameSegue" {
+        if segue.identifier == "JoinGameSegue" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let cell = tableView.cellForRowAtIndexPath(indexPath) as? LeaderboardTableViewCell
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as? AvailableGamesTableViewCell
                 let controller = segue.destinationViewController as! GameViewController
-                var user = PFUser.currentUser()
-                do{
-                    try controller.player2Id = PFQuery.getUserObjectWithId((cell?.hiddenObjectIdLabel.text)!)
-                } catch {
-                    print("Error fetching Player2")
-                }
-                controller.player2Id = user
+                let game = gameList[indexPath.row-1] as? PFObject
+                
+                controller.gameObject = game!
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
