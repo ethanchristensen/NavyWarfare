@@ -54,6 +54,7 @@ class LeaderboardTableViewController: BackgroundTableViewController {
         //let query = PFQuery(className: "User")
         
         //query.whereKey("objectId", notEqualTo: (PFUser.currentUser()?.objectId)!)
+        query.orderByDescending("wins")
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
