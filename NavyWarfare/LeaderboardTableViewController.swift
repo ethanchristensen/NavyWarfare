@@ -163,6 +163,7 @@ class LeaderboardTableViewController: BackgroundTableViewController {
                     print("Error fetching Player2")
                 }
                 controller.player2Id = user
+                controller.player1 = true
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }

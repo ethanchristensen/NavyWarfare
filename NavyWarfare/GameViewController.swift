@@ -23,13 +23,9 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     var attackDamage = Int()
     var ShipsHealth = ["BattleshipSupporter": 100, "BattleshipCruiser": 100]
     var ShipsDamage = ["BattleshipSupporter": 40, "BattleshipCruiser": 40]
-    var playerTurn = Bool(){
-        didSet {
-            if (playerTurn != oldValue){
-                print("CHANGE TURN!!!")
-            }
-        }
-    }
+    
+    var player1: Bool = false
+    var yourTurn: Bool = false
     
     @IBOutlet weak var gameView: UIView!
     
@@ -128,7 +124,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         scene.rootNode.addChildNode(worldNode)
         
         
-        var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("checkTurn"), userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("checkTurn"), userInfo: nil, repeats: true)
     }
     
     func handleSwipe(gestureRecognize: UISwipeGestureRecognizer){
@@ -160,11 +156,26 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func checkTurn(){
-        //playerTurn = Game["turn"]
-        if(playerTurn == true){
-            playerTurn = false
-        } else{
-            playerTurn = true;
+        do{
+            try self.gameObject = PFQuery.getObjectOfClass("Game", objectId: self.gameObject.objectId!)
+        } catch {
+            print("Error on checkTurn")
+        }
+        if(self.gameObject["turn"] as! Bool == self.player1){
+            self.yourTurn = true
+            let ship = scene.rootNode.childNodeWithName(self.gameObject["ship"] as! String, recursively: true)
+            if(self.gameObject["attack"] as! Bool){
+                let newXPos = self.gameObject["x"] as! Float
+                let newZPos = self.gameObject["z"] as! Float
+                if(ship?.position.x != newXPos){
+                    ship?.position.x = newXPos
+                }
+                if(ship?.position.z != newZPos){
+                    ship?.position.z = newZPos
+                }
+            } else{
+                doDamage()
+            }
         }
     }
     
@@ -228,9 +239,10 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     
     func doDamage(){
         var shipSunk = ""
-        let ship = scene.rootNode.childNodeWithName(self.lastSelectedShip, recursively: true)
+        var shipAttacked = gameObject["attackedShip"] as! String
+        let ship = scene.rootNode.childNodeWithName(shipAttacked, recursively: true)
         if(ship != nil){
-            ShipsHealth.updateValue(ShipsHealth[lastSelectedShip]! - attackDamage, forKey: lastSelectedShip)
+            ShipsHealth.updateValue(ShipsHealth[shipAttacked]! - attackDamage, forKey: shipAttacked)
             if(ShipsHealth[lastSelectedShip]! <= 0){
                 shipSunk = destroyShip(ship!)
             }
@@ -239,30 +251,33 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func SendAttackDataToParse(lastShipSunk: String){
-        var game = PFObject(className: "Game")
-        if(playerTurn == true){
-            game["turn"] = false
+        
+        if(player1 == true){
+            gameObject["turn"] = false
         } else{
-            game["turn"] = true
+            gameObject["turn"] = true
         }
         if(attacking){
-            game["attackedShip"] = lastSelectedShip
+            gameObject["attackedShip"] = lastSelectedShip
         }
-        game["shipsunk"] = lastShipSunk
-        game["attack"] = attacking
-        game["ship"] = playersAttackingShip
+        gameObject["shipsunk"] = lastShipSunk
+        gameObject["attack"] = attacking
+        gameObject["ship"] = playersAttackingShip
+        gameObject.saveInBackground()
+        
+        
     }
     
     func SendMoveDataToParse(x: Float, z: Float){
-        var game = PFObject(className: "Game")
-        if(playerTurn == true){
-            game["turn"] = false
+        if(player1 == true){
+            gameObject["turn"] = false
         } else{
-            game["turn"] = true
+            gameObject["turn"] = true
         }
-        game["x"] = x
-        game["z"] = z
-        game["ship"] = lastSelectedShip
+        gameObject["x"] = x
+        gameObject["z"] = z
+        gameObject["ship"] = lastSelectedShip
+        gameObject.saveInBackground()
     }
     
     func destroyShip(ship: SCNNode) -> String{
