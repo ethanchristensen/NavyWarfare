@@ -208,6 +208,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func handleTap(gestureRecognize: UIGestureRecognizer) {
+        if(yourTurn){
         // retrieve the SCNView
         let scnView = self.gameView as! SCNView
         
@@ -253,8 +254,8 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             material.emission.contents = UIColor.redColor()
             
             SCNTransaction.commit()
+         }
         }
-        
     }
     
     func doDamage(){
