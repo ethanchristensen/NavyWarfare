@@ -48,10 +48,12 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         scene = SCNScene(named: "art.scnassets/Small Tropical Island.scn")!
         // create and add a camera to the scene
         cameraNode.camera = SCNCamera()
-        //        cameraNode.camera!.usesOrthographicProjection = true
-        //        cameraNode.camera!.orthographicScale = 4;
-        //        cameraNode.camera!.zNear = 0
-        //        cameraNode.camera!.zFar = 100
+                cameraNode.camera!.usesOrthographicProjection = true
+                cameraNode.camera!.orthographicScale = 3;
+                cameraNode.camera!.zNear = 0
+                cameraNode.camera!.zFar = 100
+                cameraNode.camera!.xFov = 30
+                cameraNode.camera!.yFov = 30
         scene.rootNode.addChildNode(cameraNode)
         //self.controllerView.hidden = true
         // place the camera
@@ -114,18 +116,32 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         scnView.addGestureRecognizer(panGesture)
         
         
-        let ship1 = scene.rootNode.childNodeWithName("BattleshipSupporter", recursively: true)!
+        let ship1 = scene.rootNode.childNodeWithName("Battleship1SupportGame", recursively: true)!
         
-        let ship2 = scene.rootNode.childNodeWithName("BattleshipCruiser", recursively: true)!
+        let ship2 = scene.rootNode.childNodeWithName("Battleship1CrusierGame", recursively: true)!
+        
+        let ship3 = scene.rootNode.childNodeWithName("Battleship1CarrierGame", recursively: true)!
+        
+        let ship4 = scene.rootNode.childNodeWithName("Battleship2SupportGame", recursively: true)!
+        
+        let ship5 = scene.rootNode.childNodeWithName("Battleship2CrusierGame", recursively: true)!
+        
+        let ship6 = scene.rootNode.childNodeWithName("Battleship2CarrierGame", recursively: true)!
+        
         worldNode.addChildNode(ship)
         worldNode.addChildNode(ship1)
         worldNode.addChildNode(ship2)
+        worldNode.addChildNode(ship3)
+        worldNode.addChildNode(ship4)
+        worldNode.addChildNode(ship5)
+        worldNode.addChildNode(ship6)
+        
         worldNode.position.x = 0;
         worldNode.position.z = 0;
         scene.rootNode.addChildNode(worldNode)
         
         
-        NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("checkTurn"), userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("checkTurn"), userInfo: nil, repeats: true)
     }
     
     func handleSwipe(gestureRecognize: UISwipeGestureRecognizer){
@@ -209,6 +225,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     
     func handleTap(gestureRecognize: UIGestureRecognizer) {
         if(yourTurn){
+        
         // retrieve the SCNView
         let scnView = self.gameView as! SCNView
         
@@ -229,9 +246,12 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             // get its material
             let material = result.node!.geometry!.firstMaterial!
             let selectedNode = result.node!
+            if(player1 && selectedNode.name!.containsString("2") || player1 == false && selectedNode.name!.containsString("1")){
+                return
+            }
             if(selectedNode.name!.containsString("Battleship")){
                 lastSelectedShip = selectedNode.name!
-                lastSelectedShip += "er"
+                lastSelectedShip += "Game"
                 if(gameObject["attack"] as! Bool){
                     gameObject["attackedShip"] = lastSelectedShip
                     doDamage()
