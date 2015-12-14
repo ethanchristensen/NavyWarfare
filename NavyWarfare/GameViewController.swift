@@ -20,6 +20,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     var lastSelectedShip = String()
     var playersAttackingShip = String()
     var attacking = Bool()
+    var notCheckedTurn: Bool = true
     var attackDamage = Int()
     var ShipsHealth = ["BattleshipSupporter": 100, "BattleshipCruiser": 100]
     var ShipsDamage = ["BattleshipSupporter": 40, "BattleshipCruiser": 40]
@@ -161,20 +162,25 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         } catch {
             print("Error on checkTurn")
         }
-        if(self.gameObject["turn"] as! Bool == self.player1){
+        if(self.gameObject["turn"] as! Bool == self.player1 && notCheckedTurn){
             self.yourTurn = true
-            let ship = scene.rootNode.childNodeWithName(self.gameObject["ship"] as! String, recursively: true)
-            if(self.gameObject["attack"] as! Bool){
-                let newXPos = self.gameObject["x"] as! Float
-                let newZPos = self.gameObject["z"] as! Float
-                if(ship?.position.x != newXPos){
-                    ship?.position.x = newXPos
-                }
-                if(ship?.position.z != newZPos){
-                    ship?.position.z = newZPos
-                }
-            } else{
-                doDamage()
+            self.notCheckedTurn = false
+            updateGame()
+        }
+    }
+    
+    func updateGame(){
+        let ship = scene.rootNode.childNodeWithName(self.gameObject["ship"] as! String, recursively: true)
+        if(self.gameObject["attack"] as! Bool){
+            doDamage()
+        } else{
+            let newXPos = self.gameObject["x"] as! Float
+            let newZPos = self.gameObject["z"] as! Float
+            if(ship?.position.x != newXPos){
+                ship?.position.x = newXPos
+            }
+            if(ship?.position.z != newZPos){
+                ship?.position.z = newZPos
             }
         }
     }
@@ -248,8 +254,10 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             }
         }
         SendAttackDataToParse(shipSunk)
+        notCheckedTurn = true
     }
-    
+
+
     func SendAttackDataToParse(lastShipSunk: String){
         
         if(player1 == true){
@@ -264,7 +272,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         gameObject["attack"] = attacking
         gameObject["ship"] = playersAttackingShip
         gameObject.saveInBackground()
-        
+        notCheckedTurn = true
         
     }
     
@@ -277,6 +285,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         gameObject["x"] = x
         gameObject["z"] = z
         gameObject["ship"] = lastSelectedShip
+        gameObject["attack"] = false
         gameObject.saveInBackground()
     }
     
@@ -375,7 +384,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         let game = PFObject(className: "Game")
         game["player1"] = PFUser.currentUser()
         game["player2"] = player2Id
-        game["turn"] = true
+        game["turn"] = false
         game["ship"] = ""
         game["x"] = 0.0
         game["z"] = 0.0

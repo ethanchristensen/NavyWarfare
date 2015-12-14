@@ -156,13 +156,12 @@ class LeaderboardTableViewController: BackgroundTableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as? LeaderboardTableViewCell
                 let controller = segue.destinationViewController as! GameViewController
-                var user = PFUser.currentUser()
+              
                 do{
                     try controller.player2Id = PFQuery.getUserObjectWithId((cell?.hiddenObjectIdLabel.text)!)
                 } catch {
                     print("Error fetching Player2")
                 }
-                controller.player2Id = user
                 controller.player1 = true
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
