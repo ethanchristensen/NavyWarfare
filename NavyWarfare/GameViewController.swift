@@ -19,7 +19,6 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     var rotateGesture = UIRotationGestureRecognizer()
     var lastSelectedShip = String()
     var playersAttackingShip = String()
-    var attacking = Bool()
     var notCheckedTurn: Bool = true
     var moved: Bool = false
     var attackDamage = Int()
@@ -232,12 +231,11 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             if(selectedNode.name!.containsString("Battleship")){
                 lastSelectedShip = selectedNode.name!
                 lastSelectedShip += "er"
-                if(attacking){
-                    gameObject["attackingShip"] = lastSelectedShip
+                if(gameObject["attack"] as! Bool){
+                    gameObject["attackedShip"] = lastSelectedShip
                     doDamage()
                 }
             }
-            attacking = false
             // highlight it
             SCNTransaction.begin()
             SCNTransaction.setAnimationDuration(0.5)
@@ -281,11 +279,11 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         } else{
             gameObject["turn"] = true
         }
-        if(attacking){
+        if( gameObject["attack"] as! Bool){
             gameObject["attackedShip"] = lastSelectedShip
         }
         gameObject["shipsunk"] = lastShipSunk
-        gameObject["attack"] = attacking
+        gameObject["attack"] = false
         gameObject["ship"] = playersAttackingShip
         gameObject.saveInBackground()
         notCheckedTurn = true
@@ -414,15 +412,15 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     
     
     @IBAction func attackButtonAction(sender: AnyObject) {
-        attacking = true
         attackDamage = ShipsDamage[lastSelectedShip]!
         playersAttackingShip = lastSelectedShip
         moved = true
+        gameObject["attack"] = true
+        gameObject.saveInBackground()
     }
     
     @IBAction func cancelButtonAction(sender: AnyObject) {
         self.controllerView.hidden = true
-        attacking = false
         lastSelectedShip = ""
     }
     
