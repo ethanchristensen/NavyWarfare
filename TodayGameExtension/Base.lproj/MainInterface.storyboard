@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Navy Warfare Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
@@ -27,23 +27,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdV-T8-ebQ">
-                                <rect key="frame" x="0.0" y="35" width="320" height="235"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTx-ab-Fb9">
-                                        <rect key="frame" x="8" y="8" width="121" height="30"/>
-                                        <state key="normal" title="Play NavyWarfare"/>
-                                        <connections>
-                                            <action selector="returnToGame:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="V8G-Yj-5Qe"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="C6d-xv-a2x"/>
-                                    <constraint firstAttribute="height" constant="235" id="TuP-2t-cux"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS5-YD-ZUH">
                                 <rect key="frame" x="286" y="8" width="14" height="22"/>
                                 <constraints>
@@ -55,6 +38,62 @@
                                     <action selector="showMore:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="0rs-x0-xME"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdV-T8-ebQ">
+                                <rect key="frame" x="0.0" y="35" width="320" height="127"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTx-ab-Fb9">
+                                        <rect key="frame" x="75" y="84" width="171" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="171" id="Ke1-LI-AGY"/>
+                                            <constraint firstAttribute="height" constant="35" id="kLp-yF-RV4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Play NavyWarfare">
+                                            <color key="titleColor" red="0.98044871789999999" green="0.81864169190000002" blue="0.1773805299" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="returnToGame:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="V8G-Yj-5Qe"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzU-Zg-RMn">
+                                        <rect key="frame" x="8" y="46" width="304" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="304" id="XQC-V7-Wf1"/>
+                                            <constraint firstAttribute="height" constant="30" id="pxF-2a-0gk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R52-LY-geN">
+                                        <rect key="frame" x="8" y="8" width="304" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="304" id="UJV-oc-uKb"/>
+                                            <constraint firstAttribute="height" constant="31" id="tQc-QV-seA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="R52-LY-geN" secondAttribute="trailing" constant="8" id="8n5-Rp-Uwa"/>
+                                    <constraint firstAttribute="width" constant="320" id="C6d-xv-a2x"/>
+                                    <constraint firstItem="YTx-ab-Fb9" firstAttribute="top" secondItem="pzU-Zg-RMn" secondAttribute="bottom" constant="8" id="Ce0-yi-tq0"/>
+                                    <constraint firstAttribute="trailing" secondItem="YTx-ab-Fb9" secondAttribute="trailing" constant="74" id="Ewd-Q9-Rhf"/>
+                                    <constraint firstItem="pzU-Zg-RMn" firstAttribute="top" secondItem="R52-LY-geN" secondAttribute="bottom" constant="7" id="GNq-ud-A3Y"/>
+                                    <constraint firstItem="pzU-Zg-RMn" firstAttribute="top" secondItem="R52-LY-geN" secondAttribute="bottom" constant="7" id="OL9-hx-8Qr"/>
+                                    <constraint firstAttribute="trailing" secondItem="pzU-Zg-RMn" secondAttribute="trailing" constant="8" id="RRb-Xb-IXt"/>
+                                    <constraint firstAttribute="height" constant="127" id="TuP-2t-cux"/>
+                                    <constraint firstItem="R52-LY-geN" firstAttribute="leading" secondItem="QdV-T8-ebQ" secondAttribute="leading" constant="8" id="Uv9-Fx-DmX"/>
+                                    <constraint firstAttribute="bottom" secondItem="YTx-ab-Fb9" secondAttribute="bottom" constant="8" id="am8-m6-RRk"/>
+                                    <constraint firstItem="YTx-ab-Fb9" firstAttribute="top" secondItem="pzU-Zg-RMn" secondAttribute="bottom" constant="8" id="nlS-ZP-LQm"/>
+                                    <constraint firstItem="R52-LY-geN" firstAttribute="top" secondItem="QdV-T8-ebQ" secondAttribute="top" constant="8" id="ogd-HC-cZo"/>
+                                    <constraint firstItem="pzU-Zg-RMn" firstAttribute="leading" secondItem="QdV-T8-ebQ" secondAttribute="leading" constant="8" id="pR7-lf-Eag"/>
+                                    <constraint firstItem="YTx-ab-Fb9" firstAttribute="leading" secondItem="QdV-T8-ebQ" secondAttribute="leading" constant="75" id="ubo-hW-0P8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="sS5-YD-ZUH" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="113" id="0kX-lF-hls"/>
@@ -66,7 +105,6 @@
                             <constraint firstItem="QdV-T8-ebQ" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="7" id="h4V-96-h1v"/>
                             <constraint firstItem="QdV-T8-ebQ" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="hsY-6H-22D"/>
                             <constraint firstAttribute="trailing" secondItem="QdV-T8-ebQ" secondAttribute="trailing" id="p13-AP-JIZ"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="QdV-T8-ebQ" secondAttribute="bottom" id="tk6-ap-abh"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -74,9 +112,11 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="270"/>
+                    <size key="freeformSize" width="320" height="160"/>
                     <connections>
+                        <outlet property="directionLabel" destination="pzU-Zg-RMn" id="c0U-5U-KpL"/>
                         <outlet property="showMoreButton" destination="sS5-YD-ZUH" id="NM5-wC-VYH"/>
+                        <outlet property="statusLabel" destination="R52-LY-geN" id="2ao-2Z-A9H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
