@@ -23,7 +23,13 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     var attackDamage = Int()
     var ShipsHealth = ["BattleshipSupporter": 100, "BattleshipCruiser": 100]
     var ShipsDamage = ["BattleshipSupporter": 40, "BattleshipCruiser": 40]
-    var playerTurn = Bool()
+    var playerTurn = Bool(){
+        didSet {
+            if (playerTurn != oldValue){
+                print("CHANGE TURN!!!")
+            }
+        }
+    }
     
     @IBOutlet weak var gameView: UIView!
     
@@ -120,13 +126,9 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         worldNode.position.x = 0;
         worldNode.position.z = 0;
         scene.rootNode.addChildNode(worldNode)
-        //scrollView.contentSize = cameraNode.camera!.accessibilityFrame.size
-        // scrollView.addSubview(cameraNode.camera!.)
         
-        //scnView.addSubview(scrollView)
-        //TODO:
-        //self.view.bringSubviewToFront
-        //Possibly use UIKIT to create menu, and hide behind gameview until ready
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("checkTurn"), userInfo: nil, repeats: true)
     }
     
     func handleSwipe(gestureRecognize: UISwipeGestureRecognizer){
@@ -155,6 +157,15 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         //var newTrans = CGAffineTransformRotate(currentTrans, rotation)
         //sender.view.transform = newTrans
         //lastRotation = sender.rotation
+    }
+    
+    func checkTurn(){
+        //playerTurn = Game["turn"]
+        if(playerTurn == true){
+            playerTurn = false
+        } else{
+            playerTurn = true;
+        }
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
