@@ -21,6 +21,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     var playersAttackingShip = String()
     var attacking = Bool()
     var notCheckedTurn: Bool = true
+    var moved: Bool = false
     var attackDamage = Int()
     var ShipsHealth = ["BattleshipSupporter": 100, "BattleshipCruiser": 100]
     var ShipsDamage = ["BattleshipSupporter": 40, "BattleshipCruiser": 40]
@@ -173,21 +174,25 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         let ship = scene.rootNode.childNodeWithName(self.gameObject["ship"] as! String, recursively: true)
         if(ship != nil){
         if(self.gameObject["attack"] as! Bool){
-            doDamage()
+            if(moved){
+                doDamage()
+            }
         } else{
             let newXPos = self.gameObject["x"] as! Float
             let newZPos = self.gameObject["z"] as! Float
             if(ship?.position.x != newXPos){
                 if(newXPos < 0){
                     moveShipLeft()
-                } else {
+                }
+                if(newXPos > 0){
                     moveShipRight()
                 }
             }
             if(ship?.position.z != newZPos){
                 if(newZPos < 0){
                     moveShipForward()
-                } else {
+                }
+                if(newZPos > 0){
                     moveShipBack()
                 }
             }
@@ -228,6 +233,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
                 lastSelectedShip = selectedNode.name!
                 lastSelectedShip += "er"
                 if(attacking){
+                    gameObject["attackingShip"] = lastSelectedShip
                     doDamage()
                 }
             }
@@ -259,7 +265,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         let ship = scene.rootNode.childNodeWithName(shipAttacked, recursively: true)
         if(ship != nil){
             ShipsHealth.updateValue(ShipsHealth[shipAttacked]! - attackDamage, forKey: shipAttacked)
-            if(ShipsHealth[lastSelectedShip]! <= 0){
+            if(ShipsHealth[shipAttacked]! <= 0){
                 shipSunk = destroyShip(ship!)
             }
         }
@@ -283,7 +289,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         gameObject["ship"] = playersAttackingShip
         gameObject.saveInBackground()
         notCheckedTurn = true
-        
+        moved = false
     }
     
     func SendMoveDataToParse(x: Float, z: Float){
@@ -298,6 +304,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         gameObject["attack"] = false
         gameObject.saveInBackground()
         notCheckedTurn = true
+        moved = false
     }
     
     func destroyShip(ship: SCNNode) -> String{
@@ -335,6 +342,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     //Moves ship negative on the z
     @IBAction func forwardMovementAction(sender: AnyObject) {
         moveShipForward()
+        moved = true
     }
     
     func moveShipForward(){
@@ -347,11 +355,14 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             ship?.pivot = SCNMatrix4MakeRotation(Float(M_PI_2*2), 0, 1, 0)
             ship!.runAction(moveUp)
         }
-        SendMoveDataToParse(Float(0.0), z: Float(-0.5))
+        if(moved){
+            SendMoveDataToParse(Float(0.0), z: Float(-0.5))
+        }
     }
     
     @IBAction func leftMovementAction(sender: AnyObject) {
         moveShipLeft()
+        moved = true
     }
     
     func moveShipLeft(){
@@ -361,11 +372,14 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             ship?.pivot = SCNMatrix4MakeRotation(Float(-M_PI_2), 0, 1, 0)
             ship!.runAction(moveUp)
         }
-        SendMoveDataToParse(Float(-0.5), z: Float(0.0))
+        if(moved){
+            SendMoveDataToParse(Float(-0.5), z: Float(0.0))
+        }
     }
     
     @IBAction func backMovementAction(sender: AnyObject) {
         moveShipBack()
+        moved = true
     }
     
     func moveShipBack(){
@@ -375,11 +389,14 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             ship?.pivot = SCNMatrix4MakeRotation(Float(M_PI_2*4), 0, 1, 0)
             ship!.runAction(moveUp)
         }
-        SendMoveDataToParse(Float(0.0), z: Float(0.5))
+        if(moved){
+            SendMoveDataToParse(Float(0.0), z: Float(0.5))
+        }
     }
     
     @IBAction func rightMovementAction(sender: AnyObject) {
         moveShipRight()
+        moved = true
     }
     
    func moveShipRight(){
@@ -390,7 +407,9 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         ship!.runAction(moveUp)
     
         }
+    if(moved){
         SendMoveDataToParse(Float(0.5), z: Float(0.0))
+    }
     }
     
     
@@ -398,6 +417,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         attacking = true
         attackDamage = ShipsDamage[lastSelectedShip]!
         playersAttackingShip = lastSelectedShip
+        moved = true
     }
     
     @IBAction func cancelButtonAction(sender: AnyObject) {
