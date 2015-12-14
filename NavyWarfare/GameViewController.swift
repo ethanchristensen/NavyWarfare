@@ -22,8 +22,8 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     var notCheckedTurn: Bool = true
     var moved: Bool = false
     var attackDamage = Int()
-    var ShipsHealth = ["BattleshipSupporter": 100, "BattleshipCruiser": 100]
-    var ShipsDamage = ["BattleshipSupporter": 40, "BattleshipCruiser": 40]
+    var ShipsHealth = ["Battleship1SupporterGame": 100, "Battleship1CruiserGame": 100, "Battleship2SupporterGame": 100, "Battleship2CruiserGame": 100, "Battleship1CarrierGame": 100, "Battleship2CarrierGame": 100]
+    var ShipsDamage = ["Battleship1SupporterGame": 100, "Battleship1CruiserGame": 100, "Battleship2SupporterGame": 100, "Battleship2CruiserGame": 100, "Battleship1CarrierGame": 100, "Battleship2CarrierGame": 100]
     
     var player1: Bool = false
     var yourTurn: Bool = false
@@ -367,13 +367,13 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         
         if(ship != nil){
             // let rotate = SCNAction.rotateToAxisAngle(<#T##axisAngle: SCNVector4##SCNVector4#>, duration: <#T##NSTimeInterval#>)
-            let moveUp = SCNAction.moveByX(0.0, y: 0.0, z: -0.5, duration: 1.0)
+            let moveUp = SCNAction.moveByX(0.0, y: 0.0, z: -1.0, duration: 1.0)
             //ship!.runAction(rotate)
             ship?.pivot = SCNMatrix4MakeRotation(Float(M_PI_2*2), 0, 1, 0)
             ship!.runAction(moveUp)
         }
         if(moved){
-            SendMoveDataToParse(Float(0.0), z: Float(-0.5))
+            SendMoveDataToParse(Float(0.0), z: Float(-1.0))
         }
     }
     
@@ -385,12 +385,12 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     func moveShipLeft(){
         let ship = scene.rootNode.childNodeWithName(gameObject["ship"] as! String, recursively: true)
         if(ship != nil){
-            let moveUp = SCNAction.moveByX(-0.5, y: 0.0, z: 0.0, duration: 1.0)
+            let moveUp = SCNAction.moveByX(-1.0, y: 0.0, z: 0.0, duration: 1.0)
             ship?.pivot = SCNMatrix4MakeRotation(Float(-M_PI_2), 0, 1, 0)
             ship!.runAction(moveUp)
         }
         if(moved){
-            SendMoveDataToParse(Float(-0.5), z: Float(0.0))
+            SendMoveDataToParse(Float(-1.0), z: Float(0.0))
         }
     }
     
@@ -402,12 +402,12 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     func moveShipBack(){
         let ship = scene.rootNode.childNodeWithName(gameObject["ship"] as! String, recursively: true)
         if(ship != nil){
-            let moveUp = SCNAction.moveByX(0.0, y: 0.0, z: 0.5, duration: 1.0)
+            let moveUp = SCNAction.moveByX(0.0, y: 0.0, z: 1.0, duration: 1.0)
             ship?.pivot = SCNMatrix4MakeRotation(Float(M_PI_2*4), 0, 1, 0)
             ship!.runAction(moveUp)
         }
         if(moved){
-            SendMoveDataToParse(Float(0.0), z: Float(0.5))
+            SendMoveDataToParse(Float(0.0), z: Float(1.0))
         }
     }
     
@@ -419,13 +419,13 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
    func moveShipRight(){
         let ship = scene.rootNode.childNodeWithName(gameObject["ship"] as! String, recursively:     true)
         if(ship != nil){
-        let moveUp = SCNAction.moveByX(0.5, y: 0.0, z: 0.0, duration: 1.0)
+        let moveUp = SCNAction.moveByX(1.0, y: 0.0, z: 0.0, duration: 1.0)
         ship?.pivot = SCNMatrix4MakeRotation(Float(M_PI_2), 0, 1, 0)
         ship!.runAction(moveUp)
     
         }
     if(moved){
-        SendMoveDataToParse(Float(0.5), z: Float(0.0))
+        SendMoveDataToParse(Float(1.0), z: Float(0.0))
     }
     }
     
