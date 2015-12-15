@@ -11,6 +11,8 @@
 		AA0A9B001C1E33CD00C69883 /* AvailableGamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0A9AFF1C1E33CD00C69883 /* AvailableGamesTableViewController.swift */; };
 		AA0A9B021C1E33F100C69883 /* AvailableGamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0A9B011C1E33F100C69883 /* AvailableGamesTableViewCell.swift */; };
 		AA0A9B1A1C1FA4CD00C69883 /* LeaderboardTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0A9B191C1FA4CD00C69883 /* LeaderboardTableViewControllerTests.swift */; };
+		AA0A9B1C1C1FAED600C69883 /* IOSsummery.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AA0A9B1B1C1FAED600C69883 /* IOSsummery.pdf */; };
+		AA0A9B1E1C1FAEE800C69883 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA0A9B1D1C1FAEE800C69883 /* readme.txt */; };
 		AA0CFDC61BEACC6E008B03C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDC51BEACC6E008B03C5 /* AppDelegate.swift */; };
 		AA0CFDCF1BEACC6E008B03C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0CFDCE1BEACC6E008B03C5 /* Assets.xcassets */; };
 		AA0CFDDD1BEACC6E008B03C5 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDDC1BEACC6E008B03C5 /* HomeViewControllerTests.swift */; };
@@ -80,6 +82,8 @@
 		AA0A9AFF1C1E33CD00C69883 /* AvailableGamesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableGamesTableViewController.swift; sourceTree = "<group>"; };
 		AA0A9B011C1E33F100C69883 /* AvailableGamesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableGamesTableViewCell.swift; sourceTree = "<group>"; };
 		AA0A9B191C1FA4CD00C69883 /* LeaderboardTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewControllerTests.swift; sourceTree = "<group>"; };
+		AA0A9B1B1C1FAED600C69883 /* IOSsummery.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = IOSsummery.pdf; sourceTree = "<group>"; };
+		AA0A9B1D1C1FAEE800C69883 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		AA0CFDC21BEACC6E008B03C5 /* NavyWarfare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavyWarfare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0CFDC51BEACC6E008B03C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA0CFDCE1BEACC6E008B03C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 				AA1D5E761BF5342A0051C8C2 /* NavyWarfare-Bridging-Header.h */,
 				AA21716C1C0E1D2B000FF830 /* Wireframe.png */,
 				AA2171721C0E886F000FF830 /* PFUserExtension.swift */,
+				AA0A9B1B1C1FAED600C69883 /* IOSsummery.pdf */,
+				AA0A9B1D1C1FAEE800C69883 /* readme.txt */,
 				AA8B651B1C1B6E9A001AC072 /* art.scnassets */,
 			);
 			name = "App Items";
@@ -447,7 +453,9 @@
 				D2C603DB1C1DB4BC002878A9 /* Main.storyboard in Resources */,
 				AA8B651C1C1B6E9A001AC072 /* art.scnassets in Resources */,
 				AA0CFDCF1BEACC6E008B03C5 /* Assets.xcassets in Resources */,
+				AA0A9B1E1C1FAEE800C69883 /* readme.txt in Resources */,
 				AA2171771C0F6EBB000FF830 /* OceanBack.gif in Resources */,
+				AA0A9B1C1C1FAED600C69883 /* IOSsummery.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

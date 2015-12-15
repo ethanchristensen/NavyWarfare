@@ -5,6 +5,8 @@
 //  Created by Ethan Christensen on 11/4/15.
 //  Copyright © 2015 Ethan Christensen. All rights reserved.
 //
+//  iOS Semester Project 2015.  ETHAN CHRISTENSEN & GERAD WEGENER
+
 
 import XCTest
 @testable import NavyWarfare

@@ -5,6 +5,7 @@
 //  Created by Ethan Christensen on 12/2/15.
 //  Copyright © 2015 Ethan Christensen. All rights reserved.
 //
+//  iOS Semester Project 2015.  ETHAN CHRISTENSEN & GERAD WEGENER
 
 import UIKit
 
@@ -26,6 +27,8 @@ class BackgroundViewController: UIViewController {
         filter.frame = self.view.frame
         filter.backgroundColor = UIColor.blackColor()
         filter.alpha = 0.05
+        
+        
         
         
         // Do any additional setup after loading the view.

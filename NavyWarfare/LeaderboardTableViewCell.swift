@@ -5,6 +5,8 @@
 //  Created by Ethan Christensen on 12/8/15.
 //  Copyright © 2015 Ethan Christensen. All rights reserved.
 //
+//  iOS Semester Project 2015.  ETHAN CHRISTENSEN & GERAD WEGENER
+
 
 import UIKit
 

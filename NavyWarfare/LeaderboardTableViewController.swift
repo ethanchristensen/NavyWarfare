@@ -5,6 +5,7 @@
 //  Created by Ethan Christensen on 12/7/15.
 //  Copyright © 2015 Ethan Christensen. All rights reserved.
 //
+//  iOS Semester Project 2015.  ETHAN CHRISTENSEN & GERAD WEGENER
 
 import UIKit
 import Parse
@@ -88,6 +89,7 @@ class LeaderboardTableViewController: BackgroundTableViewController {
                 
                 if(user.objectId == PFUser.currentUser()?.objectId){
                     cell.startGameButton.hidden = true
+                    cell.userInteractionEnabled = false
                 }
                 
 //                do{
@@ -98,6 +100,19 @@ class LeaderboardTableViewController: BackgroundTableViewController {
                 
                 let uname = user.username
                 //let uname = object["username"] as? String
+                
+                if(user["wins"] == nil){
+                    user["wins"] = 0
+                    user["losses"] = 0
+                    user.saveInBackgroundWithBlock {
+                        (succeeded: Bool, error: NSError?) -> Void in
+                        if let error = error {
+                            let errorString = error.userInfo["error"] as? NSString
+                            print(errorString)
+                        }
+                    }
+                }
+                
                 let wins = user["wins"] as? Int
                 let losses = user["losses"] as? Int
                 cell.username.text = uname

@@ -5,6 +5,8 @@
 //  Created by Ethan Christensen on 11/4/15.
 //  Copyright (c) 2015 Ethan Christensen. All rights reserved.
 //
+//  iOS Semester Project 2015.  ETHAN CHRISTENSEN & GERAD WEGENER
+
 
 import UIKit
 import QuartzCore
@@ -468,7 +470,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         
         uiAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
             PFUser.currentUser()!["losses"] = PFUser.currentUser()!["losses"] as! Int + 1
-                PFUser.currentUser()!.signUpInBackgroundWithBlock {
+                PFUser.currentUser()!.saveInBackgroundWithBlock {
                     (succeeded: Bool, error: NSError?) -> Void in
                     if let error = error {
                         let errorString = error.userInfo["error"] as? NSString
@@ -485,7 +487,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         
         uiAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
             PFUser.currentUser()!["wins"] = PFUser.currentUser()!["wins"] as! Int + 1
-            PFUser.currentUser()!.signUpInBackgroundWithBlock {
+            PFUser.currentUser()!.saveInBackgroundWithBlock {
                 (succeeded: Bool, error: NSError?) -> Void in
                 if let error = error {
                     let errorString = error.userInfo["error"] as? NSString
