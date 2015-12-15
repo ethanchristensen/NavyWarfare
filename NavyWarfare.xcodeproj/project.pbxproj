@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BFFCBC0B9699116A53044EE /* Pods_NavyWarfareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FCDCAE0F35CCFCE828DD05 /* Pods_NavyWarfareTests.framework */; };
 		AA0A9B001C1E33CD00C69883 /* AvailableGamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0A9AFF1C1E33CD00C69883 /* AvailableGamesTableViewController.swift */; };
 		AA0A9B021C1E33F100C69883 /* AvailableGamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0A9B011C1E33F100C69883 /* AvailableGamesTableViewCell.swift */; };
+		AA0A9B1A1C1FA4CD00C69883 /* LeaderboardTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0A9B191C1FA4CD00C69883 /* LeaderboardTableViewControllerTests.swift */; };
 		AA0CFDC61BEACC6E008B03C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDC51BEACC6E008B03C5 /* AppDelegate.swift */; };
 		AA0CFDCF1BEACC6E008B03C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0CFDCE1BEACC6E008B03C5 /* Assets.xcassets */; };
-		AA0CFDDD1BEACC6E008B03C5 /* NavyWarfareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDDC1BEACC6E008B03C5 /* NavyWarfareTests.swift */; };
+		AA0CFDDD1BEACC6E008B03C5 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDDC1BEACC6E008B03C5 /* HomeViewControllerTests.swift */; };
 		AA0CFDE81BEACC6E008B03C5 /* NavyWarfareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0CFDE71BEACC6E008B03C5 /* NavyWarfareUITests.swift */; };
 		AA1D5E7C1BF537720051C8C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E7B1BF537720051C8C2 /* HomeViewController.swift */; };
 		AA21716D1C0E1D2B000FF830 /* Wireframe.png in Resources */ = {isa = PBXBuildFile; fileRef = AA21716C1C0E1D2B000FF830 /* Wireframe.png */; };
@@ -73,15 +75,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		22FCDCAE0F35CCFCE828DD05 /* Pods_NavyWarfareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NavyWarfareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2630BE54CD79E77C0CDA6F /* Pods-NavyWarfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare.release.xcconfig"; sourceTree = "<group>"; };
 		AA0A9AFF1C1E33CD00C69883 /* AvailableGamesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableGamesTableViewController.swift; sourceTree = "<group>"; };
 		AA0A9B011C1E33F100C69883 /* AvailableGamesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableGamesTableViewCell.swift; sourceTree = "<group>"; };
+		AA0A9B191C1FA4CD00C69883 /* LeaderboardTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewControllerTests.swift; sourceTree = "<group>"; };
 		AA0CFDC21BEACC6E008B03C5 /* NavyWarfare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavyWarfare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0CFDC51BEACC6E008B03C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA0CFDCE1BEACC6E008B03C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA0CFDD31BEACC6E008B03C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0CFDD81BEACC6E008B03C5 /* NavyWarfareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavyWarfareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA0CFDDC1BEACC6E008B03C5 /* NavyWarfareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavyWarfareTests.swift; sourceTree = "<group>"; };
+		AA0CFDDC1BEACC6E008B03C5 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		AA0CFDDE1BEACC6E008B03C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0CFDE31BEACC6E008B03C5 /* NavyWarfareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavyWarfareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0CFDE71BEACC6E008B03C5 /* NavyWarfareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavyWarfareUITests.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NavyWarfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9355AC3B8A34F5A0D4FC704 /* Pods-NavyWarfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfare/Pods-NavyWarfare.debug.xcconfig"; sourceTree = "<group>"; };
 		D2C603DA1C1DB4BC002878A9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D81C902FA537AEF2710C3D36 /* Pods-NavyWarfareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfareTests/Pods-NavyWarfareTests.release.xcconfig"; sourceTree = "<group>"; };
+		E05E40D45B7F206B9A3109D0 /* Pods-NavyWarfareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavyWarfareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NavyWarfareTests/Pods-NavyWarfareTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BFFCBC0B9699116A53044EE /* Pods_NavyWarfareTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				D2C603DA1C1DB4BC002878A9 /* Main.storyboard */,
-				AA2171811C0FD7F6000FF830 /* Login */,
 				AA21716F1C0E1E26000FF830 /* App Items */,
 				AA2171801C0FC46A000FF830 /* Home */,
 				AA2171821C0FDB6A000FF830 /* NewGame */,
@@ -195,7 +201,8 @@
 		AA0CFDDB1BEACC6E008B03C5 /* NavyWarfareTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA0CFDDC1BEACC6E008B03C5 /* NavyWarfareTests.swift */,
+				AA0CFDDC1BEACC6E008B03C5 /* HomeViewControllerTests.swift */,
+				AA0A9B191C1FA4CD00C69883 /* LeaderboardTableViewControllerTests.swift */,
 				AA0CFDDE1BEACC6E008B03C5 /* Info.plist */,
 			);
 			path = NavyWarfareTests;
@@ -250,13 +257,6 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
-		AA2171811C0FD7F6000FF830 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Login;
-			sourceTree = "<group>";
-		};
 		AA2171821C0FDB6A000FF830 /* NewGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +290,8 @@
 			children = (
 				C9355AC3B8A34F5A0D4FC704 /* Pods-NavyWarfare.debug.xcconfig */,
 				2F2630BE54CD79E77C0CDA6F /* Pods-NavyWarfare.release.xcconfig */,
+				E05E40D45B7F206B9A3109D0 /* Pods-NavyWarfareTests.debug.xcconfig */,
+				D81C902FA537AEF2710C3D36 /* Pods-NavyWarfareTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -299,6 +301,7 @@
 			children = (
 				B41095EE39E1A8982DC6189F /* Pods_NavyWarfare.framework */,
 				AA8B65061C1A7A0A001AC072 /* NotificationCenter.framework */,
+				22FCDCAE0F35CCFCE828DD05 /* Pods_NavyWarfareTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -332,9 +335,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA0CFDEF1BEACC6E008B03C5 /* Build configuration list for PBXNativeTarget "NavyWarfareTests" */;
 			buildPhases = (
+				F9524E41D78EBEA2B7E2282D /* Check Pods Manifest.lock */,
 				AA0CFDD41BEACC6E008B03C5 /* Sources */,
 				AA0CFDD51BEACC6E008B03C5 /* Frameworks */,
 				AA0CFDD61BEACC6E008B03C5 /* Resources */,
+				E3CBC8A65585E6B3BD85B3F4 /* Embed Pods Frameworks */,
+				02E7F0C88C6696F023E843EE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -471,6 +477,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02E7F0C88C6696F023E843EE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NavyWarfareTests/Pods-NavyWarfareTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1C791F811A9E208F1B2AFD51 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -516,6 +537,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		E3CBC8A65585E6B3BD85B3F4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NavyWarfareTests/Pods-NavyWarfareTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9524E41D78EBEA2B7E2282D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -542,7 +593,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA0CFDDD1BEACC6E008B03C5 /* NavyWarfareTests.swift in Sources */,
+				AA0A9B1A1C1FA4CD00C69883 /* LeaderboardTableViewControllerTests.swift in Sources */,
+				AA0CFDDD1BEACC6E008B03C5 /* HomeViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +764,7 @@
 		};
 		AA0CFDF01BEACC6E008B03C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E05E40D45B7F206B9A3109D0 /* Pods-NavyWarfareTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -725,6 +778,7 @@
 		};
 		AA0CFDF11BEACC6E008B03C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D81C902FA537AEF2710C3D36 /* Pods-NavyWarfareTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NavyWarfareTests/Info.plist;

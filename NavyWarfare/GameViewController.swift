@@ -461,4 +461,37 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+    
+    func gameLost(){
+        let uiAlert = UIAlertController(title: "Game Over", message: "You have no ships left, you lose.", preferredStyle: UIAlertControllerStyle.Alert)
+        self.presentViewController(uiAlert, animated: true, completion: nil)
+        
+        uiAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+            PFUser.currentUser()!["losses"] = PFUser.currentUser()!["losses"] as! Int + 1
+                PFUser.currentUser()!.signUpInBackgroundWithBlock {
+                    (succeeded: Bool, error: NSError?) -> Void in
+                    if let error = error {
+                        let errorString = error.userInfo["error"] as? NSString
+                        print(errorString)
+                    }
+                }
+        
+        }))
+    }
+    
+    func gameWon(){
+        let uiAlert = UIAlertController(title: "Game Over", message: "You have sunk your opponent, you win!", preferredStyle: UIAlertControllerStyle.Alert)
+        self.presentViewController(uiAlert, animated: true, completion: nil)
+        
+        uiAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+            PFUser.currentUser()!["wins"] = PFUser.currentUser()!["wins"] as! Int + 1
+            PFUser.currentUser()!.signUpInBackgroundWithBlock {
+                (succeeded: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    let errorString = error.userInfo["error"] as? NSString
+                    print(errorString)
+                }
+            }
+        }))
+    }
 }

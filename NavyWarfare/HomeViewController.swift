@@ -20,22 +20,6 @@ class HomeViewController: BackgroundViewController, PFLogInViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        let filePath = NSBundle.mainBundle().pathForResource("OceanBack", ofType: "gif")
-        //        let gif = NSData(contentsOfFile: filePath!)
-        //
-        //        let webViewBG = UIWebView(frame: self.view.frame)
-        //        webViewBG.loadData(gif!, MIMEType: "image/gif", textEncodingName: "utf-8", baseURL: NSURL())
-        //
-        //        webViewBG.userInteractionEnabled = false;
-        //        self.view.insertSubview(webViewBG,atIndex:0);
-        //
-        //        let filter = UIView()
-        //        filter.frame = self.view.frame
-        //        filter.backgroundColor = UIColor.blackColor()
-        //        filter.alpha = 0.05
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {

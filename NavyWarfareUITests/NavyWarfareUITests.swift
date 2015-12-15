@@ -32,5 +32,29 @@ class NavyWarfareUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    // helper function that lets us modify the startup args.
+    private func launchAppWithArgs(args: [String]) -> XCUIApplication {
+        let app = XCUIApplication()
+        app.launchArguments = args
+        app.launch()
+        return app
+    }
+    
+    func testTableLoads() {
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCUIDevice.sharedDevice().orientation = .Portrait
+        
+        let app = launchAppWithArgs([ "UI_TESTING_MODE" ])
+        
+        // check if we have one table
+        XCTAssertEqual(app.tables.count, 0)
+        
+        // confirm we have five rows in the table
+        XCTAssertEqual(app.tables.element.cells.count, 0)
+        
+        XCUIDevice.sharedDevice().orientation = .Portrait
+        
+    }
     
 }

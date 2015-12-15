@@ -9,11 +9,14 @@
 import XCTest
 @testable import NavyWarfare
 
-class NavyWarfareTests: XCTestCase {
+class HomeViewControllerTests: XCTestCase {
+    var viewController: HomeViewController!
+
+    class MockAvailableGamesTableViewController : AvailableGamesTableViewController {}
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
     }
     
     override func tearDown() {
@@ -31,6 +34,11 @@ class NavyWarfareTests: XCTestCase {
         self.measureBlock {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testViewDidLoad(){
+        
+        XCTAssertNotNil(self.viewController.title)
     }
     
 }

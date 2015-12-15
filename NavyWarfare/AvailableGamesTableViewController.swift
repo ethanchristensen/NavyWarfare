@@ -67,7 +67,8 @@ class AvailableGamesTableViewController: BackgroundTableViewController {
                 })
             } else {
                 // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
+                //print("Error: \(error!) \(error!.userInfo)")
+                print("Error fetching user")
             }
         }
     }

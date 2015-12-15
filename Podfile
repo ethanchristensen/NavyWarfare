@@ -9,3 +9,7 @@ pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
 pod 'ParseFacebookUtilsV4'
 end
+target 'NavyWarfareTests' do
+pod 'OHHTTPStubs'
+pod 'OHHTTPStubs/Swift'
+end
